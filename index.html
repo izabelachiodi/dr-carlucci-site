@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Carlucci Martins — Ortopedia da mão e do pé</title>
+<meta name="description" content="Dr. Carlucci Martins, ortopedista especialista em dor, traumas e lesões da mão e do pé. Diagnóstico preciso e tratamento personalizado para recuperar sua função e qualidade de vida.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy-900:#0A1E38;
+  --navy-800:#0E2A47;
+  --navy-700:#123356;
+  --navy-600:#1B3F66;
+  --ink:#0C1B2E;
+  --slate:#5A6B80;
+  --line:#E4E8EE;
+  --paper:#F4F6F9;
+  --paper-2:#EAEEF3;
+  --white:#FFFFFF;
+  --blue-500:#2E6BE6;
+  --blue-400:#4F8BF2;
+  --blue-300:#7FB0F8;
+  --grad:linear-gradient(100deg,#123356 0%,#2E6BE6 55%,#5B9BF5 100%);
+  --grad-soft:linear-gradient(180deg,#0E2A47 0%,#0A1E38 100%);
+  --shadow-sm:0 2px 10px rgba(12,27,46,.06);
+  --shadow-md:0 18px 40px -18px rgba(12,27,46,.35);
+  --shadow-blue:0 18px 45px -14px rgba(46,107,230,.55);
+  --r-lg:26px;
+  --r-md:18px;
+  --r-sm:12px;
+  --maxw:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Inter",system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--white);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4,.display{font-family:"Sora",sans-serif;line-height:1.08;letter-spacing:-.02em}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+section{position:relative}
+
+/* ---------- eyebrow pill ---------- */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:9px 18px;border-radius:999px;
+  font-family:"Sora";font-weight:600;font-size:.82rem;letter-spacing:.01em;
+  border:1px solid var(--line);background:var(--white);color:var(--navy-700);
+  box-shadow:var(--shadow-sm);
+}
+.eyebrow.on-dark{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14);color:#DCE7F5}
+.eyebrow svg{width:17px;height:17px;stroke:var(--blue-500)}
+.eyebrow.on-dark svg{stroke:var(--blue-300)}
+
+/* ---------- CTA ---------- */
+.cta{
+  display:inline-flex;align-items:center;justify-content:space-between;gap:18px;
+  padding:0 8px 0 26px;height:60px;min-width:300px;
+  background:var(--grad);color:#fff;border-radius:16px;
+  font-family:"Sora";font-weight:600;font-size:.86rem;letter-spacing:.06em;text-transform:uppercase;
+  box-shadow:var(--shadow-blue);border:none;cursor:pointer;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.cta:hover{transform:translateY(-2px);box-shadow:0 24px 55px -14px rgba(46,107,230,.7)}
+.cta .knob{
+  width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.92);
+  display:grid;place-items:center;flex-shrink:0;
+}
+.cta .knob svg{width:20px;height:20px;stroke:var(--navy-800);transition:transform .25s}
+.cta:hover .knob svg{transform:rotate(-45deg) translateX(1px)}
+.cta.sm{height:52px;min-width:0;font-size:.78rem;padding:0 8px 0 22px}
+.cta.sm .knob{width:38px;height:38px}
+
+/* ---------- NAV ---------- */
+header.nav{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  transition:background .3s,border-color .3s,box-shadow .3s;
+  border-bottom:1px solid transparent;
+}
+header.nav.scrolled{
+  background:rgba(10,30,56,.86);backdrop-filter:blur(14px);
+  border-color:rgba(255,255,255,.08);box-shadow:0 6px 24px rgba(0,0,0,.18);
+}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px;color:#fff}
+.brand .mark{width:38px;height:38px;flex-shrink:0}
+.brand b{font-family:"Sora";font-weight:700;font-size:1.02rem;letter-spacing:-.01em;line-height:1}
+.brand span{display:block;font-family:"Inter";font-weight:500;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-300);margin-top:3px}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{color:#D3DEEC;font-size:.9rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{
+  padding:11px 22px;border-radius:11px;background:var(--grad);color:#fff;
+  font-family:"Sora";font-weight:600;font-size:.8rem;box-shadow:var(--shadow-blue);
+  transition:transform .2s
+}
+.nav-cta:hover{transform:translateY(-1px)}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.burger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+
+/* ---------- HERO ---------- */
+.hero{
+  background:radial-gradient(120% 90% at 78% 20%,#17406B 0%,var(--navy-800) 42%,var(--navy-900) 100%);
+  color:#fff;padding:150px 0 0;overflow:hidden;position:relative;
+}
+.hero .handbg{position:absolute;right:-6%;top:2%;width:min(760px,58vw);opacity:.10;pointer-events:none}
+.hero .handbg path,.hero .handbg line,.hero .handbg circle{stroke:#8FC0FF}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;position:relative;z-index:2}
+.hero-copy .kicker{
+  display:inline-flex;align-items:center;gap:9px;font-family:"Sora";font-weight:600;
+  font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-300);margin-bottom:22px
+}
+.hero-copy .kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--blue-400);box-shadow:0 0 0 4px rgba(79,139,242,.22)}
+.hero h1{font-size:clamp(2.2rem,4.6vw,3.55rem);font-weight:800}
+.hero h1 em{font-style:normal;color:var(--blue-300)}
+.hero .rule{width:78px;height:3px;background:var(--grad);border-radius:3px;margin:26px 0 22px}
+.hero .lead{font-size:1.06rem;color:#C9D6E7;max-width:460px}
+.hero .lead b{color:#fff;font-weight:600}
+.hero-actions{margin:34px 0 20px;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.hero .place{display:inline-flex;align-items:center;gap:9px;color:#AFC2D8;font-size:.92rem;font-weight:500}
+.hero .place svg{width:18px;height:18px;stroke:var(--blue-300)}
+
+/* hero photo */
+.hero-photo{position:relative;align-self:end;min-height:520px}
+.photo-frame{
+  position:relative;height:560px;border-radius:24px 24px 0 0;overflow:hidden;
+  background:linear-gradient(180deg,#0C2340,#0A1B31);
+  border:1px solid rgba(143,192,255,.16);
+  display:flex;align-items:flex-end;justify-content:center;
+}
+.photo-frame .ph-hand{width:78%;opacity:.5;margin-bottom:0}
+.photo-frame .ph-hand path,.photo-frame .ph-hand line,.photo-frame .ph-hand circle{stroke:#6FA8EE}
+.photo-tag{
+  position:absolute;left:0;right:0;bottom:0;padding:16px 20px;
+  background:linear-gradient(180deg,rgba(10,27,49,0),rgba(10,27,49,.92));
+  font-family:"Sora";font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#89A4C4;text-align:center
+}
+.badge{
+  position:absolute;display:inline-flex;align-items:center;gap:11px;
+  padding:13px 18px;border-radius:14px;
+  background:rgba(13,32,58,.72);backdrop-filter:blur(10px);
+  border:1px solid rgba(143,192,255,.18);box-shadow:0 14px 34px -14px rgba(0,0,0,.6);
+  font-size:.88rem;color:#E7EEF7;z-index:3;animation:float 6s ease-in-out infinite
+}
+.badge b{color:#fff;font-weight:600}
+.badge .ic{width:34px;height:34px;border-radius:9px;background:rgba(79,139,242,.16);display:grid;place-items:center;flex-shrink:0}
+.badge .ic svg{width:18px;height:18px;stroke:var(--blue-300)}
+.badge.b1{top:16%;left:-38px;animation-delay:0s}
+.badge.b2{top:44%;right:-30px;animation-delay:1.2s}
+.badge.b3{bottom:16%;left:-24px;animation-delay:2.2s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+
+/* ticker */
+.ticker{margin-top:56px;background:linear-gradient(90deg,var(--navy-700),#215089,var(--navy-700));border-top:1px solid rgba(143,192,255,.14);overflow:hidden;white-space:nowrap;padding:16px 0}
+.ticker-track{display:inline-flex;gap:0;animation:scroll 32s linear infinite}
+.ticker span{font-family:"Sora";font-weight:700;font-size:.92rem;letter-spacing:.05em;color:#fff;padding:0 26px;display:inline-flex;align-items:center;gap:26px}
+.ticker span::after{content:"";width:8px;height:8px;background:var(--blue-300);transform:rotate(45deg);display:inline-block}
+.ticker .muted{color:#9DB6D6;font-weight:500}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ---------- SECTION SHELL ---------- */
+.pad{padding:100px 0}
+.center{text-align:center}
+.sec-title{font-size:clamp(1.9rem,3.6vw,2.9rem);font-weight:800;margin:20px auto 0;max-width:760px}
+.sec-title.on-dark{color:#fff}
+.sec-sub{color:var(--slate);font-size:1.05rem;max-width:600px;margin:18px auto 0}
+
+/* ---------- CONDITIONS ---------- */
+.conditions{background:var(--navy-900);color:#fff}
+.cond-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+.cond-card{
+  background:#fff;border-radius:var(--r-md);padding:30px 26px 32px;position:relative;overflow:hidden;
+  box-shadow:var(--shadow-md);transition:transform .3s ease, box-shadow .3s ease;
+}
+.cond-card::before{content:"";position:absolute;top:0;left:26px;right:26px;height:4px;border-radius:0 0 4px 4px;background:var(--grad)}
+.cond-card:hover{transform:translateY(-6px);box-shadow:0 30px 55px -20px rgba(0,0,0,.5)}
+.cond-card .ci{width:52px;height:52px;border-radius:13px;background:var(--paper);display:grid;place-items:center;margin-bottom:20px}
+.cond-card .ci svg{width:28px;height:28px;stroke:var(--navy-700);fill:none}
+.cond-card h3{font-size:1.16rem;font-weight:700;color:var(--ink);margin-bottom:10px}
+.cond-card p{color:var(--slate);font-size:.95rem}
+
+/* ---------- STATEMENT ---------- */
+.statement{background:var(--grad-soft);color:#fff;text-align:center;padding:96px 0;position:relative;overflow:hidden}
+.statement .handbg{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:640px;opacity:.07}
+.statement .handbg path,.statement .handbg line,.statement .handbg circle{stroke:#8FC0FF}
+.statement h2{font-size:clamp(2rem,5vw,3.4rem);font-weight:800;position:relative}
+.statement h2 em{font-style:normal;color:var(--blue-300)}
+.statement p{color:#B9CBE2;max-width:620px;margin:22px auto 34px;font-size:1.08rem;position:relative}
+
+/* ---------- FOR WHOM ---------- */
+.forwhom{background:var(--paper);padding:100px 0}
+.fw-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.fw-head h2{font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:800}
+.fw-head h2 em{font-style:normal;color:var(--blue-500)}
+.fw-head p{color:var(--slate);margin:18px 0 8px;font-size:1.05rem}
+.fw-head p b{color:var(--ink);font-weight:600}
+.fw-list{display:grid;gap:14px;margin-top:30px}
+.fw-item{display:flex;gap:15px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow-sm)}
+.fw-item .chk{width:30px;height:30px;border-radius:9px;background:var(--grad);display:grid;place-items:center;flex-shrink:0}
+.fw-item .chk svg{width:16px;height:16px;stroke:#fff}
+.fw-item p{color:var(--ink);font-size:.96rem;margin:0}
+.fw-photo{position:relative}
+.fw-frame{aspect-ratio:4/5;border-radius:24px;overflow:hidden;background:linear-gradient(180deg,#12345A,#0A1B31);display:grid;place-items:center;box-shadow:var(--shadow-md)}
+.fw-frame .ph-hand{width:70%;opacity:.55}
+.fw-frame .ph-hand path,.fw-frame .ph-hand line,.fw-frame .ph-hand circle{stroke:#6FA8EE}
+.fw-photo .ptag{position:absolute;bottom:16px;left:16px;right:16px;text-align:center;font-family:"Sora";font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#89A4C4}
+
+/* ---------- STEPS ---------- */
+.steps{background:var(--navy-800);color:#fff;padding:100px 0}
+.steps-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start;margin-top:20px}
+.steps-left h2{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:800;margin:22px 0 22px}
+.steps-left .photo-frame{height:auto;aspect-ratio:1/1;border-radius:20px}
+.acc{display:grid;gap:14px}
+.acc-item{border:1px solid rgba(143,192,255,.16);border-radius:14px;background:rgba(255,255,255,.03);overflow:hidden;transition:border-color .3s,background .3s}
+.acc-item.open{border-color:rgba(127,176,248,.5);background:rgba(46,107,230,.08)}
+.acc-head{display:flex;align-items:center;gap:20px;padding:20px 22px;cursor:pointer}
+.acc-head .num{font-family:"Sora";font-weight:700;color:var(--blue-300);font-size:1rem;min-width:34px}
+.acc-head .t{font-family:"Sora";font-weight:600;font-size:1.02rem;flex:1}
+.acc-head .pm{width:26px;height:26px;flex-shrink:0;position:relative}
+.acc-head .pm::before,.acc-head .pm::after{content:"";position:absolute;background:var(--blue-300);border-radius:2px;transition:transform .3s;top:50%;left:50%}
+.acc-head .pm::before{width:14px;height:2px;transform:translate(-50%,-50%)}
+.acc-head .pm::after{width:2px;height:14px;transform:translate(-50%,-50%)}
+.acc-item.open .pm::after{transform:translate(-50%,-50%) scaleY(0)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.acc-body p{padding:0 22px 22px 76px;color:#B9CBE2;font-size:.95rem}
+
+/* ---------- ABOUT ---------- */
+.about{background:#fff;padding:110px 0;position:relative;overflow:hidden}
+.about .bgname{position:absolute;top:20px;left:0;right:0;text-align:center;font-family:"Sora";font-weight:800;font-size:clamp(4rem,15vw,13rem);color:var(--paper-2);letter-spacing:-.03em;line-height:.8;z-index:0;pointer-events:none;white-space:nowrap}
+.about-grid{position:relative;z-index:2;display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center;margin-top:60px}
+.about-frame{aspect-ratio:3/4;border-radius:22px;overflow:hidden;background:linear-gradient(180deg,#12345A,#0A1B31);display:grid;place-items:center;box-shadow:var(--shadow-md);position:relative}
+.about-frame .ph-hand{width:70%;opacity:.55}
+.about-frame .ph-hand path,.about-frame .ph-hand line,.about-frame .ph-hand circle{stroke:#6FA8EE}
+.about-frame .ptag{position:absolute;bottom:16px;left:16px;right:16px;text-align:center;font-family:"Sora";font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#89A4C4}
+.about-copy h2{font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:800;margin:18px 0 6px}
+.about-copy .crm{font-family:"Sora";font-size:.9rem;color:var(--slate);font-weight:500;padding-bottom:18px;border-bottom:2px solid var(--line);margin-bottom:22px}
+.about-copy p{color:var(--slate);margin-bottom:16px;font-size:1rem}
+.about-copy p b{color:var(--ink);font-weight:600}
+.about-copy .lead-line{color:var(--ink);font-weight:600}
+.about-copy .cta{margin-top:12px}
+
+/* ---------- TESTIMONIALS ---------- */
+.testi{background:var(--paper);padding:100px 0}
+.testi-head{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+.testi-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:800}
+.testi-head h2 em{font-style:normal;color:var(--blue-500)}
+.avatars{display:flex}
+.avatars span{width:46px;height:46px;border-radius:50%;background:var(--grad);border:3px solid var(--paper);margin-left:-14px;display:grid;place-items:center;color:#fff;font-family:"Sora";font-weight:700;font-size:.9rem}
+.avatars span:first-child{margin-left:0}
+.testi-scroll{display:flex;gap:22px;overflow-x:auto;padding:44px 4px 20px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.testi-scroll::-webkit-scrollbar{display:none}
+.tcard{flex:0 0 340px;scroll-snap-align:start;background:#fff;border-radius:var(--r-md);padding:28px;box-shadow:var(--shadow-sm);border:1px solid var(--line)}
+.tcard .top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.tcard .av{width:40px;height:40px;border-radius:50%;background:var(--paper-2);display:grid;place-items:center;color:var(--navy-700);font-family:"Sora";font-weight:700}
+.tcard .who b{display:block;font-family:"Sora";font-weight:600;font-size:.98rem;color:var(--ink)}
+.tcard .stars{color:#F5B301;font-size:.85rem;letter-spacing:2px}
+.tcard p{color:var(--slate);font-size:.95rem}
+
+/* ---------- FAQ ---------- */
+.faq{background:var(--navy-900);color:#fff;padding:100px 0}
+.faq-wrap{max-width:820px;margin:50px auto 0;display:grid;gap:14px}
+.faq-item{border:1px solid rgba(143,192,255,.16);border-radius:14px;background:rgba(255,255,255,.03);overflow:hidden}
+.faq-item.open{background:rgba(46,107,230,.08);border-color:rgba(127,176,248,.5)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 24px;cursor:pointer;font-family:"Sora";font-weight:600;font-size:1.02rem}
+.faq-q .ar{width:34px;height:34px;border-radius:50%;border:1.5px solid rgba(143,192,255,.4);display:grid;place-items:center;flex-shrink:0;transition:transform .3s,background .3s}
+.faq-q .ar svg{width:16px;height:16px;stroke:var(--blue-300)}
+.faq-item.open .ar{transform:rotate(180deg);background:rgba(46,107,230,.25)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a p{padding:0 24px 24px;color:#B9CBE2;font-size:.96rem}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
+.foot-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.foot-list{display:grid;gap:26px}
+.foot-item{display:flex;gap:15px}
+.foot-item .fi{width:40px;height:40px;border-radius:11px;background:rgba(79,139,242,.14);display:grid;place-items:center;flex-shrink:0}
+.foot-item .fi svg{width:19px;height:19px;stroke:var(--blue-300)}
+.foot-item b{font-family:"Sora";font-weight:600;display:block;margin-bottom:2px}
+.foot-item span{color:#B9CBE2;font-size:.95rem}
+.foot-map{border-radius:16px;overflow:hidden;border:1px solid rgba(143,192,255,.16);min-height:280px;background:#0A1B31;position:relative;display:grid;place-items:center;text-align:center;padding:24px}
+.foot-map .mtag{color:#7E97B6;font-size:.9rem}
+.foot-map svg{width:46px;height:46px;stroke:var(--blue-300);margin-bottom:12px}
+.foot-bottom{border-top:1px solid rgba(143,192,255,.12);margin-top:56px;padding-top:34px;text-align:center}
+.foot-bottom .disc{color:#8CA3BF;font-style:italic;font-size:.92rem;max-width:640px;margin:0 auto 20px}
+.foot-bottom .copy{color:#6E86A4;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+
+/* whatsapp float */
+.wa{position:fixed;right:22px;bottom:22px;z-index:70;width:60px;height:60px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.6);transition:transform .25s}
+.wa:hover{transform:scale(1.08)}
+.wa svg{width:32px;height:32px;fill:#fff}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:960px){
+  .hero-grid,.fw-grid,.steps-grid,.about-grid,.foot-grid{grid-template-columns:1fr}
+  .hero-photo{order:-1;min-height:auto}
+  .photo-frame{height:400px}
+  .badge.b1{left:6px}.badge.b2{right:6px}.badge.b3{left:6px}
+  .cond-grid{grid-template-columns:1fr 1fr}
+  .about .bgname{font-size:20vw}
+  .steps-left .photo-frame{max-width:420px;margin:0 auto}
+  .about-frame,.fw-frame{max-width:420px;margin:0 auto}
+}
+@media(max-width:720px){
+  .nav-links{
+    position:fixed;inset:0 0 0 auto;width:min(300px,84vw);flex-direction:column;
+    background:var(--navy-800);padding:96px 30px 30px;gap:20px;align-items:flex-start;
+    transform:translateX(100%);transition:transform .35s ease;box-shadow:-10px 0 40px rgba(0,0,0,.4)
+  }
+  .nav-links.show{transform:none}
+  .burger{display:flex;z-index:61}
+  .burger.x span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.x span:nth-child(2){opacity:0}
+  .burger.x span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .cond-grid{grid-template-columns:1fr}
+  .pad,.forwhom,.steps,.about,.testi,.faq{padding-top:70px;padding-bottom:70px}
+  .hero{padding-top:120px}
+  .cta{min-width:0;width:100%}
+  .tcard{flex-basis:280px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;scroll-behavior:auto!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <svg class="mark" viewBox="0 0 40 40" fill="none">
+        <rect width="40" height="40" rx="11" fill="url(#g1)"/>
+        <path d="M14 27V16.5c0-1 1.6-1 1.6 0V22m0-1.5v-6c0-1 1.6-1 1.6 0V22m0-1.5v-6.5c0-1 1.6-1 1.6 0V22m0-1v-4.5c0-1 1.6-1 1.6 0v6.2c0 4-2.6 6.3-6 6.3-2 0-3.3-.8-4.3-2.3l-2-3c-.6-1 .8-2 1.6-1.1L14 27" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <defs><linearGradient id="g1" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#2E6BE6"/><stop offset="1" stop-color="#123356"/></linearGradient></defs>
+      </svg>
+      <div><b>Dr. Carlucci Martins</b><span>Ortopedia · Mão e Pé</span></div>
+    </a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#conditions">O que tratamos</a>
+      <a href="#steps">Como funciona</a>
+      <a href="#about">Sobre</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="#contato" class="nav-cta">Agendar consulta</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <!-- decorative anatomical hand -->
+  <svg class="handbg" viewBox="0 0 300 340" fill="none">
+    <path d="M90 300V150c0-9 14-9 14 0v70m0-70V95c0-9 14-9 14 0v125m0-125V80c0-9 14-9 14 0v140m0-125v-10c0-9 14-9 14 0v95c0 40-24 62-58 62-20 0-33-8-43-24l-24-38c-6-10 8-20 16-11l25 28" stroke="#8FC0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="60" y1="170" x2="90" y2="185" stroke="#8FC0FF" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="104" cy="150" r="3" fill="#8FC0FF"/><circle cx="118" cy="95" r="3" fill="#8FC0FF"/><circle cx="132" cy="90" r="3" fill="#8FC0FF"/>
+  </svg>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy reveal">
+        <span class="kicker"><span class="dot"></span>Especialista em mão e pé</span>
+        <h1>Dor, trauma ou lesão na mão? <em>Recupere sua função e sua vida.</em></h1>
+        <div class="rule"></div>
+        <p class="lead">Com o <b>Dr. Carlucci Martins</b>, ortopedista especialista em mão e pé, você recebe <b>diagnóstico preciso</b> e um <b>plano de tratamento sob medida</b> — do conservador à cirurgia — para voltar a fazer o que importa, sem dor.</p>
+        <div class="hero-actions">
+          <a href="#contato" class="cta">Agendar sua consulta
+            <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+          </a>
+        </div>
+        <span class="place"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 1114 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Atendimento presencial · [Cidade]</span>
+      </div>
+
+      <div class="hero-photo reveal">
+        <div class="photo-frame">
+          <svg class="ph-hand" viewBox="0 0 300 340" fill="none">
+            <path d="M90 300V150c0-9 14-9 14 0v70m0-70V95c0-9 14-9 14 0v125m0-125V80c0-9 14-9 14 0v140m0-125v-10c0-9 14-9 14 0v95c0 40-24 62-58 62-20 0-33-8-43-24l-24-38c-6-10 8-20 16-11l25 28" stroke="#6FA8EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="photo-tag">Espaço reservado para a foto do Dr. Carlucci</div>
+        </div>
+        <div class="badge b1">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l2.5 5 5.5.8-4 3.9 1 5.5L12 20l-5 2.6 1-5.5-4-3.9 5.5-.8z"/></svg></span>
+          <div><b>Referência</b> em cirurgia da mão</div>
+        </div>
+        <div class="badge b2">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div><b>+ de [X] anos</b> de atuação</div>
+        </div>
+        <div class="badge b3">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></span>
+          <div>Título de <b>especialista (RQE)</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ticker">
+    <div class="ticker-track" id="ticker"></div>
+  </div>
+</section>
+
+<!-- ============ CONDITIONS ============ -->
+<section class="conditions pad" id="conditions">
+  <div class="wrap center">
+    <span class="eyebrow on-dark reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>O que tratamos</span>
+    <h2 class="sec-title on-dark reveal">Cuidado especializado da mão ao pé</h2>
+    <p class="sec-sub reveal" style="color:#9DB6D6">Do diagnóstico ao tratamento, atuando nas principais causas de dor, trauma e perda de função nos membros.</p>
+    <div class="cond-grid">
+      <div class="cond-card reveal">
+        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M8 20V8m0 0a4 4 0 118 0m-8 0h8m0 12V8" stroke-linecap="round"/><path d="M6 14h12" stroke-linecap="round"/></svg></div>
+        <h3>Síndrome do túnel do carpo</h3>
+        <p>Formigamento, dormência e dor noturna nas mãos. Avaliação criteriosa e tratamento — sem cirurgia quando possível.</p>
+      </div>
+      <div class="cond-card reveal">
+        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M5 12c3-4 11-4 14 0-3 4-11 4-14 0z" stroke-linejoin="round"/><path d="M9 12h6" stroke-linecap="round"/></svg></div>
+        <h3>Dedo em gatilho</h3>
+        <p>Dedo que trava ou "estala" ao dobrar. Do tratamento conservador e infiltração até a liberação cirúrgica.</p>
+      </div>
+      <div class="cond-card reveal">
+        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M4 15l4-9 4 5 3-3 5 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Fraturas e traumas</h3>
+        <p>Fraturas de punho, mão e dedos com conduta precisa para uma consolidação segura e recuperação da função.</p>
+      </div>
+      <div class="cond-card reveal">
+        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M7 4v9a5 5 0 0010 0V4" stroke-linecap="round"/><path d="M4 20h16" stroke-linecap="round"/></svg></div>
+        <h3>Lesões de tendão</h3>
+        <p>Tendinites, rupturas e lesões por esforço repetitivo. Reparo e reabilitação para devolver força e mobilidade.</p>
+      </div>
+      <div class="cond-card reveal">
+        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2" stroke-linecap="round"/></svg></div>
+        <h3>Artrose de mão e punho</h3>
+        <p>Dor articular e rigidez que limitam o dia a dia. Estratégias para controlar a dor e preservar a função.</p>
+      </div>
+      <div class="cond-card reveal">
+        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M12 3v7m0 0l-3 8h6l-3-8z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="1.6"/></svg></div>
+        <h3>Infiltração guiada</h3>
+        <p>Aplicação precisa para aliviar dor e inflamação — muitas vezes uma alternativa eficaz à cirurgia.</p>
+      </div>
+      <div class="cond-card reveal">
+        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M8 20c-2-4-2-8 0-12 1-2 4-2 5 0 1-3 4-3 5-1 2 4 1 9-2 13" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Dores e lesões do pé</h3>
+        <p>Fascite plantar, esporão, deformidades e dores que atrapalham o caminhar. Diagnóstico e tratamento completo.</p>
+      </div>
+      <div class="cond-card reveal">
+        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M4 12h4l2-5 4 10 2-5h4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Dor que vai e volta</h3>
+        <p>Dor crônica que ninguém explicou? Investigação da causa real para um tratamento que resolve, não só alivia.</p>
+      </div>
+      <div class="cond-card reveal" style="display:grid;place-content:center;background:var(--grad);color:#fff">
+        <div style="text-align:center">
+          <p style="color:#DCE7F5;font-size:.95rem;margin-bottom:16px">Não encontrou o seu caso?</p>
+          <a href="#contato" class="cta sm" style="box-shadow:0 12px 30px -10px rgba(0,0,0,.4)">Fale comigo
+            <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATEMENT ============ -->
+<section class="statement">
+  <svg class="handbg" viewBox="0 0 300 340" fill="none">
+    <path d="M90 300V150c0-9 14-9 14 0v70m0-70V95c0-9 14-9 14 0v125m0-125V80c0-9 14-9 14 0v140m0-125v-10c0-9 14-9 14 0v95c0 40-24 62-58 62-20 0-33-8-43-24l-24-38c-6-10 8-20 16-11l25 28" stroke="#8FC0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <div class="wrap reveal">
+    <h2>Sua mão faz tudo por você.<br><em>Está na hora de cuidar dela.</em></h2>
+    <p>Pequenas dores viram grandes limitações quando ignoradas. Um diagnóstico correto no momento certo é o que separa o alívio temporário da recuperação definitiva.</p>
+    <a href="#contato" class="cta" style="margin:0 auto">Agendar minha avaliação
+      <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ FOR WHOM ============ -->
+<section class="forwhom">
+  <div class="wrap">
+    <div class="fw-grid">
+      <div class="fw-head reveal">
+        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M4 20c0-3 2-5 5-5s5 2 5 5"/><path d="M17 11l2 2 3-3"/></svg>Para quem é</span>
+        <h2 style="margin-top:18px">Feito para <em>quem quer</em> voltar a viver sem dor</h2>
+        <p>Para <b>homens e mulheres</b> que sentem que a dor na mão ou no pé está roubando sua rotina, seu trabalho e sua tranquilidade. É para você que:</p>
+        <div class="fw-list">
+          <div class="fw-item"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg></span><p>Convive com <b>formigamento, dormência ou dor</b> nas mãos, principalmente à noite.</p></div>
+          <div class="fw-item"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg></span><p>Já <b>tentou de tudo</b> — remédios e fisioterapia — e a dor sempre volta.</p></div>
+          <div class="fw-item"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg></span><p>Sofreu um <b>trauma, queda ou fratura</b> e quer se recuperar com segurança.</p></div>
+          <div class="fw-item"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg></span><p>Quer entender se o seu caso <b>realmente precisa de cirurgia</b> — ou não.</p></div>
+          <div class="fw-item"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg></span><p>Perdeu <b>força ou movimento</b> e quer recuperar a função das mãos ou dos pés.</p></div>
+        </div>
+      </div>
+      <div class="fw-photo reveal">
+        <div class="fw-frame">
+          <svg class="ph-hand" viewBox="0 0 300 340" fill="none">
+            <path d="M90 300V150c0-9 14-9 14 0v70m0-70V95c0-9 14-9 14 0v125m0-125V80c0-9 14-9 14 0v140m0-125v-10c0-9 14-9 14 0v95c0 40-24 62-58 62-20 0-33-8-43-24l-24-38c-6-10 8-20 16-11l25 28" stroke="#6FA8EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="ptag">Foto do Dr. Carlucci em atendimento</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STEPS ============ -->
+<section class="steps" id="steps">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow on-dark reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>Como funciona a consulta</span>
+    </div>
+    <div class="steps-grid">
+      <div class="steps-left reveal">
+        <h2>Passo a passo até você voltar a viver sem dor</h2>
+        <div class="photo-frame" style="border-radius:20px">
+          <svg class="ph-hand" viewBox="0 0 300 340" fill="none" style="width:70%;opacity:.5;margin-bottom:20px">
+            <path d="M90 300V150c0-9 14-9 14 0v70m0-70V95c0-9 14-9 14 0v125m0-125V80c0-9 14-9 14 0v140m0-125v-10c0-9 14-9 14 0v95c0 40-24 62-58 62-20 0-33-8-43-24l-24-38c-6-10 8-20 16-11l25 28" stroke="#6FA8EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="photo-tag">Foto do Dr. Carlucci no consultório</div>
+        </div>
+      </div>
+      <div class="acc reveal" id="steps-acc">
+        <div class="acc-item open">
+          <div class="acc-head"><span class="num">01</span><span class="t">Agendamento pelo WhatsApp</span><span class="pm"></span></div>
+          <div class="acc-body"><p>Você fala diretamente com a equipe, tira as primeiras dúvidas e escolhe o melhor horário — de forma simples e rápida.</p></div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-head"><span class="num">02</span><span class="t">Avaliação clínica detalhada</span><span class="pm"></span></div>
+          <div class="acc-body"><p>Uma consulta que realmente escuta a sua história, examina com cuidado e entende a raiz do problema — não apenas o sintoma.</p></div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-head"><span class="num">03</span><span class="t">Diagnóstico preciso</span><span class="pm"></span></div>
+          <div class="acc-body"><p>Quando necessário, solicitação de exames de imagem para confirmar o diagnóstico e definir o caminho mais seguro.</p></div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-head"><span class="num">04</span><span class="t">Plano de tratamento sob medida</span><span class="pm"></span></div>
+          <div class="acc-body"><p>Do conservador (medicação, infiltração, reabilitação) à cirurgia — sempre a conduta certa para o seu caso, com clareza sobre cada opção.</p></div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-head"><span class="num">05</span><span class="t">Tratamento e acompanhamento</span><span class="pm"></span></div>
+          <div class="acc-body"><p>Condução próxima em cada etapa, ajustando o que for preciso para garantir a melhor evolução possível.</p></div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-head"><span class="num">06</span><span class="t">Retorno da função e alta</span><span class="pm"></span></div>
+          <div class="acc-body"><p>O objetivo final: você de volta às suas atividades, com força, mobilidade e qualidade de vida recuperadas.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="bgname">CARLUCCI</div>
+  <div class="wrap">
+    <div class="center"><span class="eyebrow reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l7 4v6c0 5-3 8-7 10-4-2-7-5-7-10V6z"/></svg>Sobre o Dr. Carlucci</span></div>
+    <div class="about-grid">
+      <div class="about-frame reveal">
+        <svg class="ph-hand" viewBox="0 0 300 340" fill="none">
+          <path d="M90 300V150c0-9 14-9 14 0v70m0-70V95c0-9 14-9 14 0v125m0-125V80c0-9 14-9 14 0v140m0-125v-10c0-9 14-9 14 0v95c0 40-24 62-58 62-20 0-33-8-43-24l-24-38c-6-10 8-20 16-11l25 28" stroke="#6FA8EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="ptag">Foto de perfil do Dr. Carlucci</div>
+      </div>
+      <div class="about-copy reveal">
+        <h2>Dr. Carlucci Martins</h2>
+        <div class="crm">Médico ortopedista · Especialista em cirurgia da mão · CRM-[UF] [00000] · RQE [00000]</div>
+        <p>Médico ortopedista com <b>foco em dor, traumas e lesões da mão e do pé</b>. Minha missão é ajudar você a recuperar a função e a qualidade de vida que a dor tirou.</p>
+        <p>Minha atuação é guiada por <b>diagnóstico preciso e evidência científica</b>: cada conduta — do tratamento conservador à cirurgia — é escolhida com critério, para que você entenda exatamente o que está acontecendo e por quê.</p>
+        <p class="lead-line">Mais do que tratar o sintoma, eu investigo a causa.</p>
+        <p>Atendo de forma próxima e personalizada, porque acredito que cada mão, cada pé e cada história merecem um cuidado feito sob medida.</p>
+        <a href="#contato" class="cta">Agendar sua consulta
+          <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="testi">
+  <div class="wrap">
+    <div class="testi-head reveal">
+      <h2>Histórias reais. Recuperações <em>reais.</em></h2>
+      <div class="avatars"><span>A</span><span>J</span><span>H</span><span>L</span><span>W</span></div>
+    </div>
+    <div class="testi-scroll reveal">
+      <!-- Depoimentos de exemplo — substituir por avaliações reais (Google/pacientes) -->
+      <div class="tcard"><div class="top"><span class="av">M</span><div class="who"><b>Marina A.</b><span class="stars">★★★★★</span></div></div><p>Convivi anos com dor no punho achando que era "normal". O Dr. Carlucci explicou tudo com clareza e finalmente resolvi. Recomendo demais!</p></div>
+      <div class="tcard"><div class="top"><span class="av">R</span><div class="who"><b>Rafael C.</b><span class="stars">★★★★★</span></div></div><p>Profissional atencioso e muito criterioso. Fez o diagnóstico certo do meu dedo em gatilho e me deu opções antes de partir pra cirurgia.</p></div>
+      <div class="tcard"><div class="top"><span class="av">H</span><div class="who"><b>Helena S.</b><span class="stars">★★★★★</span></div></div><p>Cuidado humanizado do começo ao fim. Me senti segura em cada etapa do tratamento da minha fratura. Excelente ortopedista!</p></div>
+      <div class="tcard"><div class="top"><span class="av">L</span><div class="who"><b>Leandro O.</b><span class="stars">★★★★★</span></div></div><p>Sério, comprometido e realmente preocupado com o resultado. Voltei a treinar sem dor no punho. Recomendo de olhos fechados.</p></div>
+      <div class="tcard"><div class="top"><span class="av">W</span><div class="who"><b>Wanderson G.</b><span class="stars">★★★★★</span></div></div><p>Explica cada detalhe em linguagem acessível. Fez toda a diferença entender o meu problema e o tratamento. O melhor!</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="wrap center">
+    <span class="eyebrow on-dark reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 015 0c0 1.7-2.5 2-2.5 4"/><circle cx="12" cy="17" r=".6" fill="#7FB0F8"/></svg>Dúvidas frequentes</span>
+    <h2 class="sec-title on-dark reveal">Perguntas que todo paciente faz</h2>
+    <div class="faq-wrap" id="faq-acc">
+      <div class="faq-item open">
+        <div class="faq-q">Toda dor na mão precisa de cirurgia?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
+        <div class="faq-a"><p>Não. A maioria dos casos é tratada de forma conservadora — com medicação, reabilitação ou infiltração. A cirurgia é indicada com critério, apenas quando é o melhor caminho para o seu caso.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Qual a diferença entre ortopedista e especialista em mão?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
+        <div class="faq-a"><p>O especialista em cirurgia da mão é o ortopedista com formação específica para tratar as estruturas complexas da mão, punho e antebraço — ossos, tendões, nervos e articulações — com maior precisão diagnóstica e cirúrgica.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Sinto formigamento nas mãos à noite. O que pode ser?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
+        <div class="faq-a"><p>É um sintoma clássico da síndrome do túnel do carpo, mas pode ter outras causas. Só uma avaliação clínica cuidadosa — e, se necessário, exames — pode confirmar o diagnóstico e definir o tratamento certo.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">O atendimento é presencial ou online?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
+        <div class="faq-a"><p>[Preencher conforme a rotina do consultório — ex.: atendimento presencial em [cidade] e teleconsultas para casos de orientação e acompanhamento.]</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Como funciona o pagamento? Atende convênios?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
+        <div class="faq-a"><p>[Preencher com as formas de pagamento e os convênios atendidos. Ex.: consultas particulares com emissão de nota para reembolso, e convênios X, Y e Z.]</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">E se a minha dor for no pé, e não na mão?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
+        <div class="faq-a"><p>O Dr. Carlucci também atende dores e lesões do pé — como fascite plantar, esporão e deformidades. Se a dor atrapalha o seu caminhar, agende uma avaliação.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER / CONTACT ============ -->
+<footer id="contato">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-list reveal">
+        <div class="foot-item"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 5c0 8 7 15 15 15 1 0 2-1 2-2v-3l-4-2-2 2c-3-1-5-3-6-6l2-2-2-4H6c-1 0-2 1-2 2z"/></svg></span><div><b>WhatsApp / Telefone</b><span>[(00) 00000-0000]</span></div></div>
+        <div class="foot-item"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><div><b>E-mail</b><span>[contato@drcarluccimartins.com.br]</span></div></div>
+        <div class="foot-item"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg></span><div><b>Horário de atendimento</b><span>[Segunda a sexta, das 00h às 00h]</span></div></div>
+        <div class="foot-item"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M4 20c0-3 2-5 5-5s5 2 5 5"/><circle cx="17" cy="9" r="2"/></svg></span><div><b>Atendimento</b><span>[Presencial e online]</span></div></div>
+        <div class="foot-item"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#7FB0F8" stroke="none"/></svg></span><div><b>Instagram</b><span>@drcarluccimartins</span></div></div>
+        <div class="foot-item"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 1114 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b>Endereço</b><span>[Nome do edifício / clínica]<br>[Rua, número — sala]<br>[Bairro — Cidade — UF — CEP]</span></div></div>
+      </div>
+      <div class="foot-map reveal">
+        <div class="mtag">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21s-7-6.3-7-11a7 7 0 1114 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div>Espaço para o mapa da<br>localização do consultório<br><span style="font-size:.78rem;color:#5E7897">(incorporar Google Maps aqui)</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p class="disc">Todas as informações apresentadas neste site têm caráter informativo e não substituem a avaliação médica individualizada.</p>
+      <p class="copy">© 2025 Dr. Carlucci Martins · Médico Ortopedista · CRM-[UF] [00000] · RQE [00000]</p>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" href="#contato" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm5.6 14.2c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.5-2.7-1.2-4.4-3.9-4.5-4-.1-.2-1-1.3-1-2.5s.6-1.8.9-2c.2-.3.5-.3.6-.3h.5c.2 0 .4 0 .6.5l.7 1.7c.1.1.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.5.1.3.6 1 1.3 1.6.9.8 1.6 1 1.9 1.2.2.1.4.1.5-.1l.6-.7c.2-.2.3-.2.5-.1l1.6.8c.2.1.4.2.5.3.1.2.1.6-.1 1.2z"/></svg>
+</a>
+
+<script>
+// nav scroll
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+// burger
+const burger=document.getElementById('burger'),links=document.getElementById('navlinks');
+burger.addEventListener('click',()=>{burger.classList.toggle('x');links.classList.toggle('show')});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('x');links.classList.remove('show')}));
+// ticker (duplicate for seamless loop)
+const t=document.getElementById('ticker');
+const seg='<span>ORTOPEDIA DA MÃO E DO PÉ<i class="muted">com Dr. Carlucci Martins</i></span>';
+t.innerHTML=(seg.replace('<i','<span').replace('</i>','</span>')).repeat(8);
+// accordion generic
+function bindAcc(container,itemSel){
+  container.querySelectorAll(itemSel).forEach(item=>{
+    const head=item.querySelector('.acc-head,.faq-q');
+    const body=item.querySelector('.acc-body,.faq-a');
+    if(item.classList.contains('open'))body.style.maxHeight=body.scrollHeight+'px';
+    head.addEventListener('click',()=>{
+      const open=item.classList.contains('open');
+      container.querySelectorAll(itemSel).forEach(i=>{
+        i.classList.remove('open');
+        i.querySelector('.acc-body,.faq-a').style.maxHeight=null;
+      });
+      if(!open){item.classList.add('open');body.style.maxHeight=body.scrollHeight+'px';}
+    });
+  });
+}
+bindAcc(document.getElementById('steps-acc'),'.acc-item');
+bindAcc(document.getElementById('faq-acc'),'.faq-item');
+// reveal on scroll
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

@@ -261,9 +261,9 @@ header.nav.scrolled{
 .rating-summary .stars{color:#F5B301;letter-spacing:1px}
 .rating-summary:hover{border-color:var(--blue-300);transform:translateY(-1px)}
 .google-reviews-link{display:flex;justify-content:center;margin-top:26px}
-.testi-scroll{display:flex;gap:22px;overflow-x:auto;padding:44px 4px 20px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.testi-scroll{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;overflow:visible;padding:44px 4px 20px}
 .testi-scroll::-webkit-scrollbar{display:none}
-.tcard{flex:0 0 370px;scroll-snap-align:start;background:#fff;border-radius:var(--r-md);padding:28px;box-shadow:var(--shadow-sm);border:1px solid var(--line)}
+.tcard{flex:0 1 calc((100% - 44px)/3);min-width:300px;background:#fff;border-radius:var(--r-md);padding:28px;box-shadow:var(--shadow-sm);border:1px solid var(--line)}
 .tcard .top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
 .tcard .av{width:40px;height:40px;border-radius:50%;background:var(--paper-2);display:grid;place-items:center;color:var(--navy-700);font-family:"Sora";font-weight:700}
 .tcard .who b{display:block;font-family:"Sora";font-weight:600;font-size:.98rem;color:var(--ink)}
@@ -333,7 +333,8 @@ footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
   .pad,.forwhom,.steps,.about,.testi,.faq{padding-top:70px;padding-bottom:70px}
   .hero{padding-top:120px}
   .cta{min-width:0;width:100%}
-  .tcard{flex-basis:280px}
+  .testi-scroll{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;padding-right:24px}
+  .tcard{flex:0 0 280px;min-width:0;scroll-snap-align:start}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;scroll-behavior:auto!important;transition:none!important}

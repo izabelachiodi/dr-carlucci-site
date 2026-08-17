@@ -212,15 +212,22 @@ header.nav.scrolled{
 .pain-head h2 em{font-style:normal;color:var(--blue-300)}
 .pain-head p{color:#B9CBE2;font-size:1.05rem;max-width:500px}
 .pain-explorer{position:relative;z-index:1;display:grid;grid-template-columns:minmax(360px,1.04fr) minmax(340px,.96fr);gap:16px;padding:16px;border:1px solid rgba(143,192,255,.16);border-radius:32px;background:rgba(5,23,44,.5);box-shadow:0 36px 80px -38px rgba(0,0,0,.72)}
-.pain-visual{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:24px;background:#071B35;border:1px solid rgba(143,192,255,.18)}
+.pain-visual{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:24px;background:#071B35;border:1px solid rgba(143,192,255,.18);perspective:1400px}
 .pain-visual::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(3,16,32,.08),transparent 20%,transparent 72%,rgba(3,16,32,.48))}
-.pain-visual>img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
-.pain-visual:hover>img{transform:scale(1.012)}
-.pain-view-label{position:absolute;top:18px;z-index:4;padding:6px 10px;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:rgba(5,24,46,.6);backdrop-filter:blur(8px);color:#D6E4F5;font:700 .64rem "Sora";letter-spacing:.12em;text-transform:uppercase;pointer-events:none}
-.pain-view-label.front{left:26%;transform:translateX(-50%)}
-.pain-view-label.back{left:73%;transform:translateX(-50%)}
-.pain-map-hint{position:absolute;left:50%;bottom:16px;z-index:4;transform:translateX(-50%);display:flex;align-items:center;gap:8px;width:max-content;max-width:90%;padding:8px 12px;border-radius:999px;background:rgba(5,24,46,.74);backdrop-filter:blur(8px);color:#C8D9EC;font:500 .68rem "Sora"}
-.pain-map-hint i{width:7px;height:7px;border-radius:50%;background:var(--blue-300);box-shadow:0 0 0 5px rgba(127,176,248,.14)}
+.pain-figure-stage{position:absolute;inset:0;z-index:0;perspective:1400px}
+.pain-figure{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .82s cubic-bezier(.2,.75,.2,1);will-change:transform}
+.pain-figure.show-back{transform:rotateY(180deg)}
+.pain-side{position:absolute;inset:0;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform-style:preserve-3d}
+.pain-side.back{transform:rotateY(180deg)}
+.pain-side>img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.pain-visual:hover .pain-side>img{transform:scale(1.012)}
+.pain-view-switch{position:absolute;left:50%;top:15px;z-index:8;transform:translateX(-50%);display:flex;gap:4px;padding:4px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(5,24,46,.72);backdrop-filter:blur(10px)}
+.pain-view-switch button{padding:7px 13px;border:0;border-radius:999px;background:transparent;color:#9FB6D0;font:700 .64rem "Sora";letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:.22s}
+.pain-view-switch button:hover,.pain-view-switch button.active{background:#fff;color:var(--navy-800)}
+.pain-turn{position:absolute;left:50%;bottom:15px;z-index:8;transform:translateX(-50%);display:inline-flex;align-items:center;gap:9px;width:max-content;max-width:90%;padding:10px 15px;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:rgba(5,24,46,.78);backdrop-filter:blur(10px);color:#E4EEF9;font:600 .68rem "Sora";cursor:pointer;box-shadow:0 10px 28px rgba(0,0,0,.2);transition:background .22s,transform .22s}
+.pain-turn:hover{background:rgba(23,62,104,.92);transform:translateX(-50%) translateY(-2px)}
+.pain-turn i{display:inline-block;color:var(--blue-300);font-size:1rem;font-style:normal;line-height:1;transition:transform .6s}
+.pain-visual.back-visible .pain-turn i{transform:rotate(180deg)}
 .pain-hotspot{--x:50%;--y:50%;position:absolute;left:var(--x);top:var(--y);z-index:5;width:44px;height:44px;transform:translate(-50%,-50%);border:0;border-radius:50%;background:transparent;cursor:pointer;outline:none}
 .pain-hotspot::before{content:"";position:absolute;inset:11px;border-radius:50%;background:#fff;border:3px solid var(--blue-400);box-shadow:0 0 0 6px rgba(79,139,242,.2),0 0 24px rgba(127,176,248,.75);transition:transform .22s,background .22s,box-shadow .22s}
 .pain-hotspot::after{content:"";position:absolute;inset:5px;border:1px solid rgba(127,176,248,.65);border-radius:50%;animation:painping 2.35s ease-out infinite}
@@ -407,7 +414,8 @@ footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
   .pain-panel{min-height:0;padding:30px 22px 42px;border-radius:20px}
   .pain-motion{align-items:flex-start;flex-direction:column;gap:8px}
   .pain-panel .cta{margin-top:18px;top:12px}
-  .pain-map-hint{font-size:.6rem}
+  .pain-view-switch{top:10px}
+  .pain-turn{bottom:10px;font-size:.6rem}
   .pain-hotspot span{font-size:.62rem}
 }
 @media(prefers-reduced-motion:reduce){
@@ -551,27 +559,45 @@ footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
       <p class="reveal">Toque em um dos pontos luminosos para explorar sinais relacionados às regiões atendidas pelo Dr. Carlucci. Você pode escolher pela vista da frente ou das costas.</p>
     </div>
     <div class="pain-explorer reveal" id="pain-explorer">
-      <div class="pain-visual" aria-label="Mapa interativo com vistas frontal e posterior do corpo humano">
-        <img src="assets/images/mapa-dor-frente-costas.jpg" alt="Ilustração humana amigável vista de frente e de costas" width="1280" height="1600" loading="lazy">
-        <span class="pain-view-label front">Frente</span>
-        <span class="pain-view-label back">Costas</span>
-        <div class="pain-map-hint" aria-hidden="true"><i></i>Toque no ponto mais próximo da sua dor</div>
-        <button class="pain-hotspot active" type="button" data-pain="mao" style="--x:44%;--y:52%" aria-label="Selecionar mão e punho" aria-pressed="true"><span>Mão e punho</span></button>
-        <button class="pain-hotspot label-right" type="button" data-pain="dedos" style="--x:6%;--y:53%" aria-label="Selecionar dedos" aria-pressed="false"><span>Dedos</span></button>
-        <button class="pain-hotspot label-right" type="button" data-pain="cotovelo" style="--x:12%;--y:40%" aria-label="Selecionar cotovelo" aria-pressed="false"><span>Cotovelo</span></button>
-        <button class="pain-hotspot" type="button" data-pain="coluna" style="--x:73%;--y:37%" aria-label="Selecionar coluna e dor persistente" aria-pressed="false"><span>Coluna e dor</span></button>
-        <button class="pain-hotspot" type="button" data-pain="articulacoes" style="--x:35%;--y:68%" aria-label="Selecionar articulações" aria-pressed="false"><span>Articulações</span></button>
-        <button class="pain-hotspot" type="button" data-pain="calcanhar" style="--x:65%;--y:89%" aria-label="Selecionar pé e calcanhar" aria-pressed="false"><span>Pé e calcanhar</span></button>
+      <div class="pain-visual" id="pain-visual" aria-label="Mapa anatômico interativo com corpo giratório">
+        <div class="pain-view-switch" aria-label="Escolha a vista do corpo">
+          <button class="active" type="button" data-body-view="front" aria-pressed="true">Frente</button>
+          <button type="button" data-body-view="back" aria-pressed="false">Costas</button>
+        </div>
+        <div class="pain-figure-stage">
+          <div class="pain-figure" id="pain-figure">
+            <div class="pain-side front" data-body-side="front">
+              <img src="assets/images/mapa-dor-anatomico-frente.jpg" alt="Ilustração anatômica do corpo humano visto de frente" width="1280" height="1600" loading="lazy">
+              <button class="pain-hotspot active" type="button" data-pain="cabeca" style="--x:50%;--y:11%" aria-label="Selecionar cabeça e face" aria-pressed="true"><span>Cabeça e face</span></button>
+              <button class="pain-hotspot" type="button" data-pain="ombro" style="--x:37%;--y:26%" aria-label="Selecionar ombro e braço" aria-pressed="false"><span>Ombro e braço</span></button>
+              <button class="pain-hotspot" type="button" data-pain="mao" style="--x:75%;--y:50%" aria-label="Selecionar mão e punho" aria-pressed="false"><span>Mão e punho</span></button>
+              <button class="pain-hotspot" type="button" data-pain="quadril" style="--x:50%;--y:48%" aria-label="Selecionar quadril e pelve" aria-pressed="false"><span>Quadril e pelve</span></button>
+              <button class="pain-hotspot" type="button" data-pain="joelho" style="--x:59%;--y:67%" aria-label="Selecionar joelho" aria-pressed="false"><span>Joelho</span></button>
+              <button class="pain-hotspot label-right" type="button" data-pain="pe" style="--x:42%;--y:90%" aria-label="Selecionar tornozelo e pé" aria-pressed="false"><span>Tornozelo e pé</span></button>
+            </div>
+            <div class="pain-side back" data-body-side="back" aria-hidden="true" inert>
+              <img src="assets/images/mapa-dor-anatomico-costas.jpg" alt="Ilustração anatômica do corpo humano visto de costas" width="1280" height="1600" loading="lazy">
+              <button class="pain-hotspot" type="button" data-pain="cervical" style="--x:50%;--y:17%" aria-label="Selecionar cervical" aria-pressed="false"><span>Cervical</span></button>
+              <button class="pain-hotspot" type="button" data-pain="ombro" style="--x:37%;--y:26%" aria-label="Selecionar ombro e braço pela vista posterior" aria-pressed="false"><span>Ombro e braço</span></button>
+              <button class="pain-hotspot" type="button" data-pain="mao" style="--x:75%;--y:50%" aria-label="Selecionar mão e punho pela vista posterior" aria-pressed="false"><span>Mão e punho</span></button>
+              <button class="pain-hotspot" type="button" data-pain="lombar" style="--x:50%;--y:41%" aria-label="Selecionar coluna lombar" aria-pressed="false"><span>Coluna lombar</span></button>
+              <button class="pain-hotspot" type="button" data-pain="quadril" style="--x:50%;--y:48%" aria-label="Selecionar quadril e pelve pela vista posterior" aria-pressed="false"><span>Quadril e pelve</span></button>
+              <button class="pain-hotspot" type="button" data-pain="joelho" style="--x:59%;--y:67%" aria-label="Selecionar joelho pela vista posterior" aria-pressed="false"><span>Joelho</span></button>
+              <button class="pain-hotspot label-right" type="button" data-pain="pe" style="--x:42%;--y:90%" aria-label="Selecionar tornozelo e pé pela vista posterior" aria-pressed="false"><span>Tornozelo e pé</span></button>
+            </div>
+          </div>
+        </div>
+        <button class="pain-turn" id="pain-turn" type="button" aria-label="Girar o corpo para ver as costas"><i aria-hidden="true">↻</i><span id="pain-turn-text">Girar para ver as costas</span></button>
       </div>
       <div class="pain-panel" aria-live="polite">
-        <div class="pain-panel-top"><span class="pain-step" id="pain-step">Ponto 01 de 06</span><span class="pain-location" id="pain-location">Mão e punho</span></div>
+        <div class="pain-panel-top"><span class="pain-step" id="pain-step">Ponto 01 de 08</span><span class="pain-location" id="pain-location">Cabeça e face</span></div>
         <div class="pain-content" id="pain-content">
           <span class="pain-insight-label">Região selecionada</span>
-          <h3 id="pain-title">Dor, formigamento ou perda de força na mão</h3>
-          <p id="pain-description">Sintomas no punho, na palma ou na base do polegar podem ter origens diferentes. A localização e o tipo da dor ajudam a direcionar a investigação.</p>
-          <div class="pain-motion"><span>Sinais comuns</span><strong id="pain-action">Segurar, pinçar ou abrir objetos</strong></div>
+          <h3 id="pain-title">Dor na cabeça ou na face</h3>
+          <p id="pain-description">A localização, a duração e os fatores associados ajudam a compreender possíveis origens e a definir quando uma investigação específica ou encaminhamento é necessário.</p>
+          <div class="pain-motion"><span>Sinais comuns</span><strong id="pain-action">Dor localizada, pressão, sensibilidade ou dor facial</strong></div>
           <span class="pain-poss-label">Possibilidades que podem ser investigadas</span>
-          <div class="pain-possibilities" id="pain-possibilities"><span>Túnel do Carpo</span><span>De Quervain</span><span>Rizartrose</span><span>Cisto Sinovial</span></div>
+          <div class="pain-possibilities" id="pain-possibilities"><span>Avaliação da origem da dor</span><span>Dor facial</span><span>Encaminhamento quando necessário</span></div>
           <div class="pain-note"><i>i</i><span>O mapa é informativo. O diagnóstico e a indicação de tratamento dependem de avaliação médica individual.</span></div>
         </div>
         <a href="#contato" class="cta sm">Quero avaliar essa dor
@@ -889,19 +915,29 @@ document.querySelectorAll('.acc-head,.faq-q').forEach(head=>{
 
 // Interactive pain map: selectable regions on friendly front-and-back human views
 const painData={
-  mao:{step:'01',location:'Mão e punho',action:'Segurar, pinçar ou abrir objetos',title:'Dor, formigamento ou perda de força na mão',description:'Sintomas no punho, na palma ou na base do polegar podem ter origens diferentes. A localização e o tipo da dor ajudam a direcionar a investigação.',possibilities:['Túnel do Carpo','De Quervain','Rizartrose','Cisto Sinovial']},
-  dedos:{step:'02',location:'Dedos',action:'Dobrar, estender ou destravar o dedo',title:'Dedos que travam, estalam ou perdem movimento',description:'Dor ao dobrar, sensação de travamento ou dificuldade para estender o dedo podem estar ligadas à inflamação dos tendões e de suas estruturas de deslizamento.',possibilities:['Dedo em Gatilho','Inflamação tendínea','Avaliação cirúrgica quando indicada']},
-  cotovelo:{step:'03',location:'Cotovelo',action:'Levantar peso ou repetir o mesmo movimento',title:'Dor no cotovelo ao segurar, levantar ou repetir movimentos',description:'O incômodo pode surgir por sobrecarga dos tendões e afetar trabalho, esporte e tarefas simples do dia a dia.',possibilities:['Epicondilite','Sobrecarga tendínea','Infiltração quando indicada']},
-  coluna:{step:'04',location:'Dor persistente',action:'Retomar a rotina sem a dor reaparecer',title:'Dor que persiste ou volta mesmo após tratamentos',description:'Quando a dor não melhora como esperado, uma investigação detalhada pode identificar estruturas envolvidas e orientar procedimentos mais precisos.',possibilities:['Diagnóstico da origem da dor','Bloqueios diagnósticos','Tratamento intervencionista']},
-  articulacoes:{step:'05',location:'Articulações',action:'Mover-se, agachar ou subir degraus',title:'Dor articular que limita movimento e qualidade de vida',description:'Algumas dores articulares podem ser tratadas com abordagens conservadoras e procedimentos direcionados, conforme o diagnóstico e a necessidade.',possibilities:['Infiltração para dor','Procedimentos guiados','Tratamento individualizado']},
-  calcanhar:{step:'06',location:'Pé e calcanhar',action:'Apoiar o pé e dar os primeiros passos',title:'Dor forte no calcanhar, principalmente nos primeiros passos',description:'Dor ao levantar da cama ou depois de períodos de repouso é um sinal frequente de irritação das estruturas que sustentam o pé.',possibilities:['Fascite Plantar','Controle da inflamação','Infiltração quando indicada']}
+  cabeca:{step:'01',location:'Cabeça e face',action:'Dor localizada, pressão, sensibilidade ou dor facial',title:'Dor na cabeça ou na face',description:'A localização, a duração e os fatores associados ajudam a compreender possíveis origens e a definir quando uma investigação específica ou encaminhamento é necessário.',possibilities:['Avaliação da origem da dor','Dor facial','Encaminhamento quando necessário']},
+  cervical:{step:'02',location:'Cervical',action:'Rigidez, limitação ou dor que se estende para ombros e braços',title:'Dor ou rigidez na região cervical',description:'O desconforto no pescoço pode limitar movimentos e, em alguns casos, irradiar para ombros e braços. A avaliação busca identificar as estruturas relacionadas aos sintomas.',possibilities:['Cervicalgia','Dor irradiada','Tratamento intervencionista']},
+  ombro:{step:'03',location:'Ombro e braço',action:'Elevar o braço, vestir-se ou dormir sobre o lado dolorido',title:'Dor no ombro ou no braço durante os movimentos',description:'Dor ao elevar o braço, carregar peso ou repetir tarefas pode estar relacionada a tendões, articulações ou à irradiação de outras regiões.',possibilities:['Tendinopatias','Epicondilite','Dor irradiada']},
+  mao:{step:'04',location:'Mão e punho',action:'Segurar, pinçar ou abrir objetos',title:'Dor, formigamento ou perda de força na mão',description:'Sintomas no punho, na palma ou na base do polegar podem ter origens diferentes. A localização e o tipo da dor ajudam a direcionar a investigação.',possibilities:['Túnel do Carpo','De Quervain','Rizartrose','Cisto Sinovial']},
+  lombar:{step:'05',location:'Coluna lombar',action:'Sentar, levantar, permanecer em pé ou caminhar',title:'Dor na parte baixa das costas',description:'A dor lombar pode permanecer localizada ou se estender para outras regiões. O exame clínico ajuda a diferenciar as possíveis estruturas envolvidas.',possibilities:['Lombalgia','Dor irradiada','Tratamento intervencionista']},
+  quadril:{step:'06',location:'Quadril e pelve',action:'Caminhar, levantar da cadeira ou deitar de lado',title:'Dor no quadril ou na região da pelve',description:'O incômodo pode aparecer ao caminhar, permanecer sentado ou deitar sobre um dos lados. A origem pode ser articular, tendínea ou irradiada.',possibilities:['Dor articular','Tendinopatias','Infiltração quando indicada']},
+  joelho:{step:'07',location:'Joelho',action:'Agachar, subir escadas ou levantar-se',title:'Dor no joelho que limita movimentos',description:'Dor, inchaço ou dificuldade para apoiar e dobrar o joelho podem ter causas diferentes e precisam ser avaliados conforme a rotina e o histórico do paciente.',possibilities:['Desgaste articular','Sobrecarga tendínea','Infiltração quando indicada']},
+  pe:{step:'08',location:'Tornozelo e pé',action:'Apoiar o pé, caminhar ou dar os primeiros passos',title:'Dor no tornozelo, na planta do pé ou no calcanhar',description:'A região dolorida e o momento em que o incômodo aparece ajudam a diferenciar sobrecargas, inflamações e alterações do apoio.',possibilities:['Fascite Plantar','Tendinopatias','Avaliação do tornozelo']}
 };
 const painExplorer=document.getElementById('pain-explorer');
 if(painExplorer){
   const painContent=document.getElementById('pain-content');
   const painButtons=[...painExplorer.querySelectorAll('[data-pain]')];
+  const painVisual=document.getElementById('pain-visual');
+  const painFigure=document.getElementById('pain-figure');
+  const painTurn=document.getElementById('pain-turn');
+  const painTurnText=document.getElementById('pain-turn-text');
+  const viewButtons=[...painExplorer.querySelectorAll('[data-body-view]')];
+  const bodySides=[...painExplorer.querySelectorAll('[data-body-side]')];
+  let selectedPain='cabeca',bodyView='front',dragStart=null;
   function selectPain(key){
     const item=painData[key];if(!item)return;
+    selectedPain=key;
     painButtons.forEach(button=>{
       const active=button.dataset.pain===key;
       button.classList.toggle('active',active);
@@ -909,7 +945,7 @@ if(painExplorer){
     });
     painContent.classList.add('changing');
     setTimeout(()=>{
-      document.getElementById('pain-step').textContent=`Ponto ${item.step} de 06`;
+      document.getElementById('pain-step').textContent=`Ponto ${item.step} de 08`;
       document.getElementById('pain-location').textContent=item.location;
       document.getElementById('pain-title').textContent=item.title;
       document.getElementById('pain-description').textContent=item.description;
@@ -918,7 +954,36 @@ if(painExplorer){
       painContent.classList.remove('changing');
     },160);
   }
+  function setBodyView(view){
+    bodyView=view;
+    const showBack=view==='back';
+    painFigure.classList.toggle('show-back',showBack);
+    painVisual.classList.toggle('back-visible',showBack);
+    viewButtons.forEach(button=>{
+      const active=button.dataset.bodyView===view;
+      button.classList.toggle('active',active);
+      button.setAttribute('aria-pressed',String(active));
+    });
+    bodySides.forEach(side=>{
+      const hidden=side.dataset.bodySide!==view;
+      side.inert=hidden;
+      side.setAttribute('aria-hidden',String(hidden));
+    });
+    painTurn.setAttribute('aria-label',showBack?'Girar o corpo para ver a frente':'Girar o corpo para ver as costas');
+    painTurnText.textContent=showBack?'Girar para ver a frente':'Girar para ver as costas';
+    const visibleSide=bodySides.find(side=>side.dataset.bodySide===view);
+    if(!visibleSide.querySelector(`[data-pain="${selectedPain}"]`))selectPain(showBack?'cervical':'cabeca');
+  }
   painButtons.forEach(button=>button.addEventListener('click',()=>selectPain(button.dataset.pain)));
+  viewButtons.forEach(button=>button.addEventListener('click',()=>setBodyView(button.dataset.bodyView)));
+  painTurn.addEventListener('click',()=>setBodyView(bodyView==='front'?'back':'front'));
+  painVisual.addEventListener('pointerdown',event=>{if(!event.target.closest('button'))dragStart=event.clientX;});
+  painVisual.addEventListener('pointerup',event=>{
+    if(dragStart===null)return;
+    const distance=event.clientX-dragStart;dragStart=null;
+    if(Math.abs(distance)>45)setBodyView(distance<0?'back':'front');
+  });
+  painVisual.addEventListener('pointercancel',()=>{dragStart=null;});
 }
 </script>
 </body>

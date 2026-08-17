@@ -203,41 +203,59 @@ header.nav.scrolled{
 .cond-card h3{font-size:1.16rem;font-weight:700;color:var(--ink);margin-bottom:10px}
 .cond-card p{color:var(--slate);font-size:.95rem}
 
-/* ---------- INTERACTIVE PAIN MAP ---------- */
-.pain-map{background:linear-gradient(145deg,#071A31 0%,#0E2A47 58%,#123A63 100%);color:#fff;padding:110px 0;overflow:hidden}
-.pain-map::before{content:"";position:absolute;width:620px;height:620px;border-radius:50%;right:-240px;top:-250px;background:radial-gradient(circle,rgba(79,139,242,.18),transparent 68%);pointer-events:none}
-.pain-head{display:grid;grid-template-columns:1fr .78fr;gap:44px;align-items:end;margin-bottom:48px}
-.pain-head h2{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;margin-top:18px;max-width:760px}
-.pain-head h2 em{font-style:normal;color:var(--blue-300)}
-.pain-head p{color:#B9CBE2;font-size:1.05rem;max-width:500px}
-.pain-explorer{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(340px,.96fr);gap:28px;align-items:stretch}
-.pain-visual{position:relative;aspect-ratio:4/5;border-radius:28px;overflow:hidden;border:1px solid rgba(143,192,255,.2);background:#061A32;box-shadow:0 32px 80px -40px rgba(0,0,0,.8)}
-.pain-visual::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 65%,rgba(4,17,33,.5))}
+/* ---------- INTERACTIVE SYMPTOM GUIDE ---------- */
+.pain-map{background:#F3F6FA;color:var(--ink);padding:110px 0;overflow:hidden}
+.pain-map::before{content:"";position:absolute;width:720px;height:720px;border-radius:50%;right:-280px;top:-320px;background:radial-gradient(circle,rgba(79,139,242,.14),transparent 68%);pointer-events:none}
+.pain-map::after{content:"";position:absolute;left:-180px;bottom:-260px;width:560px;height:560px;border:1px solid rgba(46,107,230,.09);border-radius:50%;box-shadow:0 0 0 70px rgba(46,107,230,.025),0 0 0 140px rgba(46,107,230,.018);pointer-events:none}
+.pain-head{display:grid;grid-template-columns:1fr .78fr;gap:44px;align-items:end;margin-bottom:42px;position:relative;z-index:1}
+.pain-head h2{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;margin-top:18px;max-width:790px}
+.pain-head h2 em{font-style:normal;color:var(--blue-500)}
+.pain-head p{color:var(--slate);font-size:1.05rem;max-width:520px}
+.pain-explorer{position:relative;z-index:1;padding:14px;border:1px solid #DDE5EF;border-radius:32px;background:rgba(255,255,255,.9);box-shadow:0 34px 80px -44px rgba(12,27,46,.42)}
+.pain-route{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:4px 4px 14px;border-bottom:1px solid var(--line)}
+.pain-route button{display:flex;align-items:center;gap:10px;min-width:0;padding:13px 11px;border:1px solid transparent;border-radius:15px;background:transparent;color:var(--slate);text-align:left;cursor:pointer;transition:background .22s,border-color .22s,transform .22s,color .22s}
+.pain-route button:hover{background:#F4F7FB;border-color:#DCE4EF;transform:translateY(-2px)}
+.pain-route button.active{background:var(--navy-800);border-color:var(--navy-800);color:#fff;box-shadow:0 12px 24px -16px rgba(14,42,71,.85)}
+.route-no{width:30px;height:30px;border-radius:10px;display:grid;place-items:center;flex:0 0 30px;background:#E9F0FB;color:var(--blue-500);font:700 .68rem "Sora"}
+.pain-route button.active .route-no{background:rgba(127,176,248,.2);color:var(--blue-300)}
+.pain-route button>span:last-child{min-width:0}
+.pain-route b,.pain-route small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pain-route b{font:600 .73rem "Sora";color:var(--ink)}
+.pain-route small{font-size:.67rem;color:#7B8999;margin-top:2px}
+.pain-route button.active b{color:#fff}.pain-route button.active small{color:#B9CBE2}
+.pain-workspace{display:grid;grid-template-columns:minmax(320px,.86fr) minmax(0,1.14fr);gap:14px;padding-top:14px;align-items:stretch}
+.pain-visual{position:relative;aspect-ratio:4/5;border-radius:24px;overflow:hidden;border:1px solid rgba(143,192,255,.2);background:#061A32;box-shadow:inset 0 0 70px rgba(79,139,242,.08)}
+.pain-visual::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(rgba(127,176,248,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(127,176,248,.055) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:linear-gradient(180deg,transparent 2%,#000 25%,#000 78%,transparent 98%);mask-image:linear-gradient(180deg,transparent 2%,#000 25%,#000 78%,transparent 98%)}
+.pain-visual::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(4,17,33,.12),transparent 26%,transparent 72%,rgba(4,17,33,.62))}
 .pain-visual>img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
-.pain-visual:hover>img{transform:scale(1.025)}
-.pain-hotspot{--x:50%;--y:50%;position:absolute;left:var(--x);top:var(--y);z-index:3;width:34px;height:34px;border:0;border-radius:50%;transform:translate(-50%,-50%);background:#fff;box-shadow:0 0 0 7px rgba(79,139,242,.2),0 0 30px rgba(127,176,248,.7);cursor:pointer;transition:transform .25s,background .25s,box-shadow .25s}
-.pain-hotspot::before,.pain-hotspot::after{content:"";position:absolute;inset:-9px;border:1px solid rgba(127,176,248,.7);border-radius:50%;animation:painpulse 2.4s ease-out infinite}
-.pain-hotspot::after{animation-delay:1.2s}
-.pain-hotspot span{position:absolute;left:50%;top:calc(100% + 12px);transform:translateX(-50%) translateY(4px);padding:6px 10px;border-radius:999px;background:rgba(5,24,46,.9);border:1px solid rgba(143,192,255,.25);color:#fff;font:600 .7rem "Sora";white-space:nowrap;opacity:0;pointer-events:none;transition:.25s}
-.pain-hotspot:hover,.pain-hotspot:focus-visible,.pain-hotspot.active{transform:translate(-50%,-50%) scale(1.16);background:var(--blue-300);box-shadow:0 0 0 9px rgba(79,139,242,.22),0 0 38px rgba(127,176,248,.9);outline:none}
-.pain-hotspot:hover span,.pain-hotspot:focus-visible span,.pain-hotspot.active span{opacity:1;transform:translateX(-50%) translateY(0)}
-@keyframes painpulse{0%{transform:scale(.8);opacity:.8}100%{transform:scale(1.65);opacity:0}}
-.pain-panel{display:flex;flex-direction:column;padding:36px;border-radius:28px;background:rgba(255,255,255,.96);color:var(--ink);box-shadow:0 28px 70px -35px rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.7)}
-.pain-panel-top{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:26px}
-.pain-step{font-family:"Sora";font-weight:700;color:var(--blue-500);letter-spacing:.12em;font-size:.78rem;text-transform:uppercase}
-.pain-location{padding:7px 12px;border-radius:999px;background:#EAF1FD;color:var(--navy-700);font-size:.75rem;font-weight:700}
+.pain-visual:hover>img{transform:scale(1.018)}
+.pain-visual-caption{position:absolute;left:20px;bottom:17px;z-index:4;display:flex;align-items:center;gap:8px;color:#C7D8EC;font:500 .69rem "Sora";letter-spacing:.04em}
+.pain-visual-caption i{width:7px;height:7px;border-radius:50%;background:var(--blue-300);box-shadow:0 0 0 5px rgba(127,176,248,.13)}
+.pain-hotspot{--x:50%;--y:50%;position:absolute;left:var(--x);top:var(--y);z-index:3;width:28px;height:28px;border:1px solid rgba(255,255,255,.8);border-radius:9px;transform:translate(-50%,-50%) rotate(45deg);background:rgba(255,255,255,.88);box-shadow:0 0 0 6px rgba(79,139,242,.14),0 0 26px rgba(127,176,248,.55);cursor:pointer;transition:transform .25s,background .25s,box-shadow .25s}
+.pain-hotspot::before{content:"";position:absolute;inset:-8px;border:1px solid rgba(127,176,248,.56);border-radius:12px;animation:painpulse 2.5s ease-out infinite}
+.pain-hotspot span{position:absolute;left:50%;top:calc(100% + 15px);transform:translateX(-50%) translateY(4px) rotate(-45deg);padding:6px 10px;border-radius:9px;background:rgba(5,24,46,.92);border:1px solid rgba(143,192,255,.25);color:#fff;font:600 .68rem "Sora";white-space:nowrap;opacity:0;pointer-events:none;transition:.25s}
+.pain-hotspot:hover,.pain-hotspot:focus-visible,.pain-hotspot.active{transform:translate(-50%,-50%) rotate(45deg) scale(1.2);background:var(--blue-300);box-shadow:0 0 0 9px rgba(79,139,242,.2),0 0 34px rgba(127,176,248,.85);outline:none}
+.pain-hotspot:hover span,.pain-hotspot:focus-visible span,.pain-hotspot.active span{opacity:1;transform:translateX(-50%) translateY(0) rotate(-45deg)}
+@keyframes painpulse{0%{transform:scale(.75);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+.pain-panel{display:flex;flex-direction:column;padding:clamp(30px,4vw,52px);border-radius:24px 24px 24px 7px;background:linear-gradient(145deg,#F7FAFE,#EAF1FA);color:var(--ink);border:1px solid #DCE5F0;box-shadow:none}
+.pain-panel-top{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:34px}
+.pain-step{font-family:"Sora";font-weight:700;color:var(--blue-500);letter-spacing:.12em;font-size:.75rem;text-transform:uppercase}
+.pain-location{padding:7px 12px;border-radius:999px;background:#fff;border:1px solid #D7E1EE;color:var(--navy-700);font-size:.75rem;font-weight:700}
 .pain-content{transition:opacity .18s ease,transform .18s ease}
 .pain-content.changing{opacity:0;transform:translateY(8px)}
-.pain-content h3{font-size:clamp(1.65rem,2.8vw,2.25rem);font-weight:800;margin-bottom:16px}
-.pain-content>p{color:var(--slate);font-size:1rem}
-.pain-possibilities{display:flex;flex-wrap:wrap;gap:9px;margin:24px 0}
-.pain-possibilities span{padding:8px 11px;border-radius:10px;background:var(--paper);border:1px solid var(--line);color:var(--navy-700);font-size:.78rem;font-weight:600}
-.pain-note{display:flex;gap:12px;padding:15px;border-radius:13px;background:#F2F6FC;color:var(--slate);font-size:.82rem;margin-bottom:24px}
-.pain-note i{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--blue-500);color:#fff;font-style:normal;font-weight:700;flex-shrink:0}
-.pain-region-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:auto;padding-top:22px;border-top:1px solid var(--line)}
-.pain-region-buttons button{padding:11px 8px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--slate);font:600 .76rem "Sora";cursor:pointer;transition:.2s}
-.pain-region-buttons button:hover,.pain-region-buttons button.active{background:var(--navy-800);border-color:var(--navy-800);color:#fff;transform:translateY(-2px)}
-.pain-panel .cta{margin-top:24px;align-self:flex-start}
+.pain-insight-label{display:block;color:#77889D;font:700 .7rem "Sora";letter-spacing:.11em;text-transform:uppercase;margin-bottom:12px}
+.pain-content h3{font-size:clamp(1.7rem,2.8vw,2.35rem);font-weight:800;margin-bottom:16px;max-width:620px}
+.pain-content>p{color:var(--slate);font-size:1rem;max-width:640px}
+.pain-motion{display:grid;grid-template-columns:140px 1fr;gap:18px;align-items:center;margin:25px 0 20px;padding:16px 18px;border-left:3px solid var(--blue-500);border-radius:0 13px 13px 0;background:#fff}
+.pain-motion span{color:#7B8999;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+.pain-motion strong{font-family:"Sora";font-size:.92rem;color:var(--navy-800)}
+.pain-poss-label{display:block;color:#77889D;font-size:.74rem;font-weight:700;margin-bottom:9px}
+.pain-possibilities{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}
+.pain-possibilities span{padding:8px 11px;border-radius:10px;background:#fff;border:1px solid #D7E1EE;color:var(--navy-700);font-size:.78rem;font-weight:600}
+.pain-note{display:flex;gap:12px;padding:14px;border-radius:13px;background:rgba(255,255,255,.72);color:var(--slate);font-size:.8rem;margin-bottom:0}
+.pain-note i{width:22px;height:22px;border-radius:7px;display:grid;place-items:center;background:var(--navy-800);color:#fff;font-style:normal;font-weight:700;flex-shrink:0}
+.pain-panel .cta{margin-top:auto;align-self:flex-start;transform:translateY(18px)}
+.pain-panel .cta:hover{transform:translateY(16px)}
 
 /* ---------- STATEMENT ---------- */
 .statement{background:var(--grad-soft);color:#fff;text-align:center;padding:96px 0;position:relative;overflow:hidden}
@@ -370,7 +388,8 @@ footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
   .steps-left .photo-frame{max-width:420px;margin:0 auto}
   .about-frame,.fw-frame{max-width:420px;margin:0 auto}
   .pain-head{grid-template-columns:1fr}
-  .pain-explorer{grid-template-columns:1fr}
+  .pain-route{grid-template-columns:repeat(3,1fr)}
+  .pain-workspace{grid-template-columns:minmax(280px,.8fr) minmax(0,1.2fr)}
 }
 @media(max-width:720px){
   .nav-links{
@@ -390,10 +409,16 @@ footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
   .testi-scroll{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;padding-right:24px}
   .tcard{flex:0 0 280px;min-width:0;scroll-snap-align:start}
   .pain-map{padding:72px 0}
+  .pain-explorer{padding:10px;border-radius:24px}
+  .pain-route{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px}
+  .pain-route button{flex:0 0 178px;scroll-snap-align:start}
+  .pain-workspace{grid-template-columns:1fr;padding-top:10px}
   .pain-visual{border-radius:20px}
-  .pain-panel{padding:25px 20px;border-radius:20px}
-  .pain-region-buttons{grid-template-columns:repeat(2,1fr)}
-  .pain-hotspot{width:30px;height:30px}
+  .pain-panel{padding:30px 22px 38px;border-radius:20px 20px 20px 7px}
+  .pain-motion{grid-template-columns:1fr;gap:5px}
+  .pain-panel .cta{margin-top:18px;transform:none}
+  .pain-panel .cta:hover{transform:translateY(-2px)}
+  .pain-hotspot{width:26px;height:26px}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;scroll-behavior:auto!important;transition:none!important}
@@ -525,45 +550,51 @@ footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
   </div>
 </section>
 
-<!-- ============ INTERACTIVE PAIN MAP ============ -->
+<!-- ============ INTERACTIVE SYMPTOM GUIDE ============ -->
 <section class="pain-map" id="mapa-da-dor">
   <div class="wrap">
     <div class="pain-head">
       <div class="reveal">
-        <span class="eyebrow on-dark"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>Mapa da sua dor</span>
-        <h2>A dor dá pistas. <em>Mostre onde ela começa.</em></h2>
+        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>Guia interativo de sintomas</span>
+        <h2>Seu corpo não fala em diagnósticos. <em>Ele fala em gestos.</em></h2>
       </div>
-      <p class="reveal">Selecione uma região do corpo. Você verá sinais que merecem atenção e possibilidades que podem ser investigadas com precisão.</p>
+      <p class="reveal">Escolha a situação que mais incomoda. O mapa localiza a região e organiza pistas importantes para a avaliação — sem tentar dar um diagnóstico pela tela.</p>
     </div>
     <div class="pain-explorer reveal" id="pain-explorer">
-      <div class="pain-visual" aria-label="Ilustração interativa do corpo humano">
-        <img src="assets/images/mapa-dor-corpo-amigavel.jpg" alt="Ilustração anatômica amigável do corpo humano com regiões selecionáveis" width="1280" height="1600" loading="lazy">
-        <button class="pain-hotspot active" type="button" data-pain="mao" style="--x:73%;--y:50%" aria-pressed="true"><span>Mão e punho</span></button>
-        <button class="pain-hotspot" type="button" data-pain="dedos" style="--x:26%;--y:54%" aria-pressed="false"><span>Dedos</span></button>
-        <button class="pain-hotspot" type="button" data-pain="cotovelo" style="--x:28%;--y:35%" aria-pressed="false"><span>Cotovelo</span></button>
-        <button class="pain-hotspot" type="button" data-pain="coluna" style="--x:50%;--y:42%" aria-pressed="false"><span>Coluna e dor</span></button>
-        <button class="pain-hotspot" type="button" data-pain="articulacoes" style="--x:58%;--y:68%" aria-pressed="false"><span>Articulações</span></button>
-        <button class="pain-hotspot" type="button" data-pain="calcanhar" style="--x:59%;--y:91%" aria-pressed="false"><span>Calcanhar</span></button>
+      <div class="pain-route" aria-label="Escolha pelo movimento que provoca incômodo">
+        <button class="active" type="button" data-pain="mao" aria-pressed="true"><span class="route-no">01</span><span><b>Segurar objetos</b><small>Mão e punho</small></span></button>
+        <button type="button" data-pain="dedos" aria-pressed="false"><span class="route-no">02</span><span><b>Dobrar o dedo</b><small>Dedos</small></span></button>
+        <button type="button" data-pain="cotovelo" aria-pressed="false"><span class="route-no">03</span><span><b>Repetir movimentos</b><small>Cotovelo</small></span></button>
+        <button type="button" data-pain="coluna" aria-pressed="false"><span class="route-no">04</span><span><b>A dor sempre volta</b><small>Dor persistente</small></span></button>
+        <button type="button" data-pain="articulacoes" aria-pressed="false"><span class="route-no">05</span><span><b>Mover sem limitação</b><small>Articulações</small></span></button>
+        <button type="button" data-pain="calcanhar" aria-pressed="false"><span class="route-no">06</span><span><b>Dar os primeiros passos</b><small>Pé e calcanhar</small></span></button>
       </div>
-      <div class="pain-panel" aria-live="polite">
-        <div class="pain-panel-top"><span class="pain-step" id="pain-step">Região 01 de 06</span><span class="pain-location" id="pain-location">Mão e punho</span></div>
-        <div class="pain-content" id="pain-content">
-          <h3 id="pain-title">Dor, formigamento ou perda de força na mão</h3>
-          <p id="pain-description">Sintomas no punho, na palma ou na base do polegar podem ter origens diferentes. A localização e o tipo da dor ajudam a direcionar a investigação.</p>
-          <div class="pain-possibilities" id="pain-possibilities"><span>Túnel do Carpo</span><span>De Quervain</span><span>Rizartrose</span><span>Cisto Sinovial</span></div>
-          <div class="pain-note"><i>i</i><span>Estas são possibilidades comuns. Somente uma avaliação médica pode confirmar o diagnóstico.</span></div>
+      <div class="pain-workspace">
+        <div class="pain-visual" aria-label="Ilustração interativa do corpo humano">
+          <img src="assets/images/mapa-dor-corpo-amigavel.jpg" alt="Ilustração anatômica amigável do corpo humano com regiões selecionáveis" width="1280" height="1600" loading="lazy">
+          <div class="pain-visual-caption" aria-hidden="true"><i></i>Você também pode tocar nos sinais luminosos</div>
+          <button class="pain-hotspot active" type="button" data-pain="mao" style="--x:73%;--y:50%" aria-pressed="true"><span>Mão e punho</span></button>
+          <button class="pain-hotspot" type="button" data-pain="dedos" style="--x:26%;--y:54%" aria-pressed="false"><span>Dedos</span></button>
+          <button class="pain-hotspot" type="button" data-pain="cotovelo" style="--x:28%;--y:35%" aria-pressed="false"><span>Cotovelo</span></button>
+          <button class="pain-hotspot" type="button" data-pain="coluna" style="--x:50%;--y:42%" aria-pressed="false"><span>Dor persistente</span></button>
+          <button class="pain-hotspot" type="button" data-pain="articulacoes" style="--x:58%;--y:68%" aria-pressed="false"><span>Articulações</span></button>
+          <button class="pain-hotspot" type="button" data-pain="calcanhar" style="--x:59%;--y:91%" aria-pressed="false"><span>Pé e calcanhar</span></button>
         </div>
-        <div class="pain-region-buttons" aria-label="Escolha uma região da dor">
-          <button class="active" type="button" data-pain="mao">Mão e punho</button>
-          <button type="button" data-pain="dedos">Dedos</button>
-          <button type="button" data-pain="cotovelo">Cotovelo</button>
-          <button type="button" data-pain="coluna">Coluna e dor</button>
-          <button type="button" data-pain="articulacoes">Articulações</button>
-          <button type="button" data-pain="calcanhar">Calcanhar</button>
+        <div class="pain-panel" aria-live="polite">
+          <div class="pain-panel-top"><span class="pain-step" id="pain-step">Gesto 01 de 06</span><span class="pain-location" id="pain-location">Mão e punho</span></div>
+          <div class="pain-content" id="pain-content">
+            <span class="pain-insight-label">O que esse gesto pode revelar</span>
+            <h3 id="pain-title">Dor, formigamento ou perda de força na mão</h3>
+            <p id="pain-description">Sintomas no punho, na palma ou na base do polegar podem ter origens diferentes. A localização e o tipo da dor ajudam a direcionar a investigação.</p>
+            <div class="pain-motion"><span>Movimento percebido</span><strong id="pain-action">Segurar, pinçar ou abrir objetos</strong></div>
+            <span class="pain-poss-label">Possibilidades que podem ser investigadas</span>
+            <div class="pain-possibilities" id="pain-possibilities"><span>Túnel do Carpo</span><span>De Quervain</span><span>Rizartrose</span><span>Cisto Sinovial</span></div>
+            <div class="pain-note"><i>i</i><span>O guia é apenas informativo. Somente a avaliação médica pode confirmar a origem da dor e indicar o tratamento adequado.</span></div>
+          </div>
+          <a href="#contato" class="cta sm">Quero avaliar minha dor
+            <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+          </a>
         </div>
-        <a href="#contato" class="cta sm">Quero avaliar minha dor
-          <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
-        </a>
       </div>
     </div>
   </div>
@@ -874,14 +905,14 @@ document.querySelectorAll('.acc-head,.faq-q').forEach(head=>{
   head.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();head.click();}});
 });
 
-// Interactive pain map: original hand-and-foot selector
+// Interactive symptom guide: the patient starts from a movement, not a diagnosis
 const painData={
-  mao:{step:'01',location:'Mão e punho',title:'Dor, formigamento ou perda de força na mão',description:'Sintomas no punho, na palma ou na base do polegar podem ter origens diferentes. A localização e o tipo da dor ajudam a direcionar a investigação.',possibilities:['Túnel do Carpo','De Quervain','Rizartrose','Cisto Sinovial']},
-  dedos:{step:'02',location:'Dedos',title:'Dedos que travam, estalam ou perdem movimento',description:'Dor ao dobrar, sensação de travamento ou dificuldade para estender o dedo podem estar ligadas à inflamação dos tendões e de suas estruturas de deslizamento.',possibilities:['Dedo em Gatilho','Inflamação tendínea','Avaliação cirúrgica quando indicada']},
-  cotovelo:{step:'03',location:'Cotovelo',title:'Dor no cotovelo ao segurar, levantar ou repetir movimentos',description:'O incômodo pode surgir por sobrecarga dos tendões e afetar trabalho, esporte e tarefas simples do dia a dia.',possibilities:['Epicondilite','Sobrecarga tendínea','Infiltração quando indicada']},
-  coluna:{step:'04',location:'Coluna e dor persistente',title:'Dor que persiste ou volta mesmo após tratamentos',description:'Quando a dor não melhora como esperado, uma investigação detalhada pode identificar estruturas envolvidas e orientar procedimentos mais precisos.',possibilities:['Diagnóstico da origem da dor','Bloqueios diagnósticos','Tratamento intervencionista']},
-  articulacoes:{step:'05',location:'Articulações',title:'Dor articular que limita movimento e qualidade de vida',description:'Algumas dores articulares podem ser tratadas com abordagens conservadoras e procedimentos direcionados, conforme o diagnóstico e a necessidade.',possibilities:['Infiltração para dor','Procedimentos guiados','Tratamento individualizado']},
-  calcanhar:{step:'06',location:'Pé · Calcanhar',title:'Dor forte no calcanhar, principalmente nos primeiros passos',description:'Dor ao levantar da cama ou depois de períodos de repouso é um sinal frequente de irritação das estruturas que sustentam o pé.',possibilities:['Fascite Plantar','Controle da inflamação','Infiltração quando indicada']}
+  mao:{step:'01',location:'Mão e punho',action:'Segurar, pinçar ou abrir objetos',title:'Dor, formigamento ou perda de força na mão',description:'Sintomas no punho, na palma ou na base do polegar podem ter origens diferentes. A localização e o tipo da dor ajudam a direcionar a investigação.',possibilities:['Túnel do Carpo','De Quervain','Rizartrose','Cisto Sinovial']},
+  dedos:{step:'02',location:'Dedos',action:'Dobrar, estender ou destravar o dedo',title:'Dedos que travam, estalam ou perdem movimento',description:'Dor ao dobrar, sensação de travamento ou dificuldade para estender o dedo podem estar ligadas à inflamação dos tendões e de suas estruturas de deslizamento.',possibilities:['Dedo em Gatilho','Inflamação tendínea','Avaliação cirúrgica quando indicada']},
+  cotovelo:{step:'03',location:'Cotovelo',action:'Levantar peso ou repetir o mesmo movimento',title:'Dor no cotovelo ao segurar, levantar ou repetir movimentos',description:'O incômodo pode surgir por sobrecarga dos tendões e afetar trabalho, esporte e tarefas simples do dia a dia.',possibilities:['Epicondilite','Sobrecarga tendínea','Infiltração quando indicada']},
+  coluna:{step:'04',location:'Dor persistente',action:'Retomar a rotina sem a dor reaparecer',title:'Dor que persiste ou volta mesmo após tratamentos',description:'Quando a dor não melhora como esperado, uma investigação detalhada pode identificar estruturas envolvidas e orientar procedimentos mais precisos.',possibilities:['Diagnóstico da origem da dor','Bloqueios diagnósticos','Tratamento intervencionista']},
+  articulacoes:{step:'05',location:'Articulações',action:'Mover-se, agachar ou subir degraus',title:'Dor articular que limita movimento e qualidade de vida',description:'Algumas dores articulares podem ser tratadas com abordagens conservadoras e procedimentos direcionados, conforme o diagnóstico e a necessidade.',possibilities:['Infiltração para dor','Procedimentos guiados','Tratamento individualizado']},
+  calcanhar:{step:'06',location:'Pé e calcanhar',action:'Apoiar o pé e dar os primeiros passos',title:'Dor forte no calcanhar, principalmente nos primeiros passos',description:'Dor ao levantar da cama ou depois de períodos de repouso é um sinal frequente de irritação das estruturas que sustentam o pé.',possibilities:['Fascite Plantar','Controle da inflamação','Infiltração quando indicada']}
 };
 const painExplorer=document.getElementById('pain-explorer');
 if(painExplorer){
@@ -892,14 +923,15 @@ if(painExplorer){
     painButtons.forEach(button=>{
       const active=button.dataset.pain===key;
       button.classList.toggle('active',active);
-      if(button.classList.contains('pain-hotspot'))button.setAttribute('aria-pressed',String(active));
+      button.setAttribute('aria-pressed',String(active));
     });
     painContent.classList.add('changing');
     setTimeout(()=>{
-      document.getElementById('pain-step').textContent=`Região ${item.step} de 06`;
+      document.getElementById('pain-step').textContent=`Gesto ${item.step} de 06`;
       document.getElementById('pain-location').textContent=item.location;
       document.getElementById('pain-title').textContent=item.title;
       document.getElementById('pain-description').textContent=item.description;
+      document.getElementById('pain-action').textContent=item.action;
       document.getElementById('pain-possibilities').innerHTML=item.possibilities.map(text=>`<span>${text}</span>`).join('');
       painContent.classList.remove('changing');
     },160);

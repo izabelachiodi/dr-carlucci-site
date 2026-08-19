@@ -151,22 +151,6 @@ header.nav.scrolled{
   background:linear-gradient(180deg,rgba(10,27,49,0),rgba(10,27,49,.92));
   font-family:"Sora";font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#89A4C4;text-align:center
 }
-.badge{
-  position:absolute;display:inline-flex;align-items:center;gap:11px;
-  padding:13px 18px;border-radius:14px;
-  background:rgba(13,32,58,.72);backdrop-filter:blur(10px);
-  border:1px solid rgba(143,192,255,.18);box-shadow:0 14px 34px -14px rgba(0,0,0,.6);
-  font-size:.88rem;color:#E7EEF7;z-index:3;animation:float 6s ease-in-out infinite
-}
-.badge b{color:#fff;font-weight:600}
-.badge .ic{width:34px;height:34px;border-radius:9px;background:rgba(79,139,242,.16);display:grid;place-items:center;flex-shrink:0}
-.badge .ic svg{width:18px;height:18px;stroke:var(--blue-300)}
-.badge.b1{top:auto;bottom:42%;left:-38px;animation-delay:0s}
-.badge.b2{top:40%;right:-30px;animation-delay:1.2s}
-.badge.b3{bottom:22%;left:-24px;animation-delay:2.2s}
-.badge.b4{bottom:7%;right:-18px;animation-delay:3s}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-
 /* ticker */
 .ticker{margin-top:56px;background:linear-gradient(90deg,var(--navy-700),#215089,var(--navy-700));border-top:1px solid rgba(143,192,255,.14);overflow:hidden;white-space:nowrap;padding:16px 0}
 .ticker-track{display:inline-flex;gap:0;animation:scroll 32s linear infinite}
@@ -441,8 +425,6 @@ footer{background:#071523;color:#fff;padding:80px 0 40px}
   .hero-grid,.fw-grid,.steps-grid,.about-grid,.foot-grid{grid-template-columns:1fr}
   .hero-photo{order:-1;min-height:auto}
   .photo-frame{height:400px}
-  .badge{width:calc(50% - 10px);padding:10px 12px;font-size:.72rem;line-height:1.35}
-  .badge.b1{left:6px;right:auto;top:auto;bottom:92px}.badge.b2{right:6px;top:auto;bottom:92px}.badge.b3{left:6px;bottom:18px}.badge.b4{right:6px;bottom:18px}
   .cond-grid,.care-tags{grid-template-columns:1fr 1fr}
   .care-regions{grid-template-columns:repeat(4,1fr)}
   .persistent-grid,.treatment-intro{grid-template-columns:1fr}
@@ -539,22 +521,6 @@ footer{background:#071523;color:#fff;padding:80px 0 40px}
       <div class="hero-photo reveal">
         <div class="photo-frame">
           <img class="site-photo hero-doctor" src="assets/images/dr-carlucci-retrato.webp" alt="Retrato profissional do Dr. Carlucci Martins" width="1360" height="871" fetchpriority="high">
-        </div>
-        <div class="badge b1">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l2.5 5 5.5.8-4 3.9 1 5.5L12 20l-5 2.6 1-5.5-4-3.9 5.5-.8z"/></svg></span>
-          <div><b>Ortopedista</b> e traumatologista</div>
-        </div>
-        <div class="badge b2">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-          <div><b>Especialista</b> em cirurgia da mão</div>
-        </div>
-        <div class="badge b3">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></span>
-          <div><b>Pós-graduação</b> em intervenção em dor e medicina regenerativa</div>
-        </div>
-        <div class="badge b4">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5v14"/><circle cx="12" cy="12" r="9"/></svg></span>
-          <div>Procedimentos <b>minimamente invasivos</b> quando indicados</div>
         </div>
       </div>
     </div>

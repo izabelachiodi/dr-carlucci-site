@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dr. Carlucci Martins — Cirurgia da Mão e Intervenção em Dor</title>
-<meta name="description" content="Dr. Carlucci Martins, ortopedista e traumatologista, especialista em cirurgia da mão, com pós-graduação em intervenção em dor e medicina regenerativa.">
+<title>Dr. Carlucci Martins | Intervenção em Dor e Cirurgia da Mão</title>
+<meta name="description" content="Cuidado ortopédico com atenção à história de cada paciente, atuação em intervenção em dor e especialização em cirurgia da mão.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -116,8 +116,6 @@ header.nav.scrolled{
   background:radial-gradient(120% 90% at 78% 20%,#17406B 0%,var(--navy-800) 42%,var(--navy-900) 100%);
   color:#fff;padding:150px 0 0;overflow:hidden;position:relative;
 }
-.hero .handbg{position:absolute;right:-6%;top:2%;width:min(760px,58vw);opacity:.10;pointer-events:none}
-.hero .handbg path,.hero .handbg line,.hero .handbg circle{stroke:#8FC0FF}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;position:relative;z-index:2}
 .hero-copy .kicker{
   display:inline-flex;align-items:center;gap:9px;font-family:"Sora";font-weight:600;
@@ -146,8 +144,6 @@ header.nav.scrolled{
 .care-doctor{object-position:center 38%}
 .consult-doctor{object-position:center center}
 .profile-doctor{object-position:center 28%}
-.photo-frame .ph-hand{width:78%;opacity:.5;margin-bottom:0}
-.photo-frame .ph-hand path,.photo-frame .ph-hand line,.photo-frame .ph-hand circle{stroke:#6FA8EE}
 .photo-tag{
   position:absolute;left:0;right:0;bottom:0;padding:16px 20px;
   background:linear-gradient(180deg,rgba(10,27,49,0),rgba(10,27,49,.92));
@@ -257,10 +253,22 @@ header.nav.scrolled{
 .pain-note i{width:21px;height:21px;border-radius:50%;display:grid;place-items:center;background:var(--blue-500);color:#fff;font-style:normal;font-weight:700;flex-shrink:0}
 .pain-panel .cta{margin-top:auto;align-self:flex-start;position:relative;top:18px}
 
+/* ---------- VIDEO ---------- */
+.care-video{background:linear-gradient(180deg,#fff 0%,var(--paper) 100%);padding:100px 0}
+.care-video-card{position:relative;display:grid;grid-template-columns:1fr minmax(320px,430px);align-items:center;gap:clamp(34px,6vw,74px);padding:clamp(30px,5vw,58px);border-radius:24px;background:linear-gradient(125deg,var(--navy-900),#123B68 68%,#235EB9);color:#fff;box-shadow:var(--shadow-md);overflow:hidden}
+.care-video-card::after{content:"";position:absolute;left:-90px;bottom:-160px;width:370px;height:370px;border:1px solid rgba(255,255,255,.1);border-radius:50%;box-shadow:0 0 0 42px rgba(255,255,255,.026),0 0 0 84px rgba(255,255,255,.014);pointer-events:none}
+.care-video-copy{position:relative;z-index:1}
+.care-video-copy small{display:block;color:var(--blue-300);font:700 .68rem "Sora";letter-spacing:.12em;text-transform:uppercase;margin-bottom:13px}
+.care-video-copy h2{font-size:clamp(1.55rem,3vw,2.35rem);font-weight:800;max-width:620px}
+.care-video-copy p{color:#BFD0E3;font-size:1rem;max-width:560px;margin:18px 0 26px}
+.care-video-link{display:inline-flex;align-items:center;gap:13px;padding:8px 9px 8px 18px;border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(255,255,255,.08);font:700 .7rem "Sora";letter-spacing:.05em;text-transform:uppercase;color:#fff;transition:background .22s,transform .22s}
+.care-video-link:hover{background:rgba(255,255,255,.15);transform:translateY(-2px)}
+.care-video-link span{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--navy-800);font-size:1.05rem}
+.care-video-shell{position:relative;width:100%;max-width:430px;justify-self:end;overflow:hidden;border:1px solid rgba(255,255,255,.18);border-radius:18px;background:#fff;box-shadow:0 30px 55px -28px rgba(0,0,0,.7)}
+.care-video-shell iframe{display:block;width:100%;height:640px;border:0;background:#fff}
+
 /* ---------- STATEMENT ---------- */
 .statement{background:var(--grad-soft);color:#fff;text-align:center;padding:96px 0;position:relative;overflow:hidden}
-.statement .handbg{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:640px;opacity:.07}
-.statement .handbg path,.statement .handbg line,.statement .handbg circle{stroke:#8FC0FF}
 .statement h2{font-size:clamp(2rem,5vw,3.4rem);font-weight:800;position:relative}
 .statement h2 em{font-style:normal;color:var(--blue-300)}
 .statement p{color:#B9CBE2;max-width:620px;margin:22px auto 34px;font-size:1.08rem;position:relative}
@@ -281,8 +289,6 @@ header.nav.scrolled{
 .fw-frame{aspect-ratio:4/5;border-radius:24px;overflow:hidden;background:linear-gradient(180deg,#12345A,#0A1B31);display:grid;place-items:center;box-shadow:var(--shadow-md)}
 .fw-frame .site-photo,.about-frame .site-photo,.steps-left .site-photo{transition:transform .7s cubic-bezier(.2,.8,.2,1)}
 .fw-frame:hover .site-photo,.about-frame:hover .site-photo,.steps-left .photo-frame:hover .site-photo{transform:scale(1.045)}
-.fw-frame .ph-hand{width:70%;opacity:.55}
-.fw-frame .ph-hand path,.fw-frame .ph-hand line,.fw-frame .ph-hand circle{stroke:#6FA8EE}
 .fw-photo .ptag{position:absolute;bottom:16px;left:16px;right:16px;text-align:center;font-family:"Sora";font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#89A4C4}
 
 /* ---------- STEPS ---------- */
@@ -308,8 +314,6 @@ header.nav.scrolled{
 .about{background:#fff;padding:110px 0;position:relative;overflow:hidden}
 .about-grid{position:relative;z-index:2;display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center;margin-top:60px}
 .about-frame{aspect-ratio:3/4;border-radius:22px;overflow:hidden;background:linear-gradient(180deg,#12345A,#0A1B31);display:grid;place-items:center;box-shadow:var(--shadow-md);position:relative}
-.about-frame .ph-hand{width:70%;opacity:.55}
-.about-frame .ph-hand path,.about-frame .ph-hand line,.about-frame .ph-hand circle{stroke:#6FA8EE}
 .about-frame .ptag{position:absolute;bottom:16px;left:16px;right:16px;text-align:center;font-family:"Sora";font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#89A4C4}
 .about-copy h2{font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:800;margin:18px 0 6px}
 .about-copy .crm{font-family:"Sora";font-size:.9rem;color:var(--slate);font-weight:500;padding-bottom:18px;border-bottom:2px solid var(--line);margin-bottom:22px}
@@ -353,7 +357,7 @@ header.nav.scrolled{
 .faq-a p{padding:0 24px 24px;color:#B9CBE2;font-size:.96rem}
 
 /* ---------- FOOTER ---------- */
-footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
+footer{background:#071523;color:#fff;padding:80px 0 40px}
 .foot-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
 .foot-list{display:grid;gap:26px}
 .foot-item{display:flex;gap:15px}
@@ -365,6 +369,18 @@ footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
 .foot-map iframe{width:100%;height:100%;min-height:280px;border:0}
 .foot-map .mtag{color:#7E97B6;font-size:.9rem}
 .foot-map svg{width:46px;height:46px;stroke:var(--blue-300);margin-bottom:12px}
+.footer-directory{display:grid;grid-template-columns:1.55fr .7fr .8fr 1fr;gap:clamp(30px,5vw,72px);margin-top:68px;padding-top:58px;border-top:1px solid rgba(143,192,255,.14)}
+.footer-name{display:inline-flex;align-items:center;gap:4px;margin-bottom:5px}
+.footer-name h2{font-size:clamp(1.55rem,2.5vw,2.15rem);font-weight:800;letter-spacing:-.04em;line-height:1}
+.verified-badge{position:relative;width:22px;height:22px;display:grid;place-items:center;flex:0 0 auto;background:#2897F5;color:#fff;font:800 .72rem "Sora";line-height:1;transform:translateY(1px);clip-path:polygon(50% 0%,61% 12%,77% 8%,83% 24%,100% 31%,92% 48%,100% 64%,83% 73%,77% 91%,60% 87%,50% 100%,39% 87%,22% 91%,17% 73%,0% 64%,8% 48%,0% 31%,17% 24%,22% 8%,39% 12%);filter:drop-shadow(0 4px 9px rgba(40,151,245,.38))}
+.footer-identity>strong{display:block;color:#D9E5F3;font:600 .92rem "Sora";margin-bottom:18px}
+.footer-identity>p{color:#8FA5BE;font-size:.92rem;max-width:420px;margin-bottom:22px}
+.footer-credentials{padding-top:20px;border-top:1px solid rgba(143,192,255,.12);color:#7890AB;font-size:.78rem;line-height:1.75}
+.footer-column h3{color:var(--blue-300);font:700 .72rem "Sora";letter-spacing:.1em;text-transform:uppercase;margin:8px 0 22px}
+.footer-column nav,.footer-column .footer-contact-list{display:grid;gap:14px}
+.footer-column a,.footer-contact-list span{color:#A8B8CB;font-size:.9rem;line-height:1.5;transition:color .2s,transform .2s}
+.footer-column a:hover{color:#fff;transform:translateX(3px)}
+.footer-contact-list b{display:block;color:#D9E5F3;font:600 .73rem "Sora";margin-bottom:2px}
 .foot-bottom{border-top:1px solid rgba(143,192,255,.12);margin-top:56px;padding-top:34px;text-align:center}
 .foot-bottom .disc{color:#8CA3BF;font-style:italic;font-size:.92rem;max-width:640px;margin:0 auto 20px}
 .foot-bottom .copy{color:#6E86A4;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
@@ -390,6 +406,9 @@ footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
   .pain-head{grid-template-columns:1fr}
   .pain-explorer{grid-template-columns:1fr}
   .pain-visual{width:100%;max-width:620px;margin:0 auto}
+  .care-video-card{grid-template-columns:1fr}
+  .care-video-shell{justify-self:center;max-width:390px}
+  .footer-directory{grid-template-columns:1.3fr 1fr}
 }
 @media(max-width:720px){
   .nav-links{
@@ -403,7 +422,7 @@ footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
   .burger.x span:nth-child(2){opacity:0}
   .burger.x span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
   .cond-grid{grid-template-columns:1fr}
-  .pad,.forwhom,.steps,.about,.testi,.faq{padding-top:70px;padding-bottom:70px}
+  .pad,.forwhom,.steps,.about,.testi,.faq,.care-video{padding-top:70px;padding-bottom:70px}
   .hero{padding-top:120px}
   .cta{min-width:0;width:100%}
   .testi-scroll{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;padding-right:24px}
@@ -417,6 +436,10 @@ footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
   .pain-view-switch{top:10px}
   .pain-turn{bottom:10px;font-size:.6rem}
   .pain-hotspot span{font-size:.62rem}
+  .care-video-card{padding:28px 20px}
+  .care-video-shell iframe{height:600px}
+  .footer-directory{grid-template-columns:1fr;gap:32px;padding-top:42px}
+  .footer-column h3{margin-bottom:15px}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;scroll-behavior:auto!important;transition:none!important}
@@ -432,14 +455,14 @@ footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
 <header class="nav" id="nav">
   <div class="nav-inner">
     <a href="#top" class="brand">
-      <div><b>Dr. Carlucci Martins</b><span>Cirurgia da Mão · Intervenção em Dor</span></div>
+      <div><b>Dr. Carlucci Martins</b><span>Intervenção em Dor · Cirurgia da Mão</span></div>
     </a>
     <nav class="nav-links" id="navlinks">
-      <a href="#conditions">O que tratamos</a>
-      <a href="#steps">Como funciona</a>
+      <a href="#conditions">Áreas de cuidado</a>
+      <a href="#steps">A consulta</a>
       <a href="#about">Sobre</a>
       <a href="#faq">Dúvidas</a>
-      <a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Carlucci." class="nav-cta" target="_blank" rel="noopener">Agendar consulta</a>
+      <a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Carlucci." class="nav-cta" target="_blank" rel="noopener">Falar com a equipe</a>
     </nav>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
@@ -447,25 +470,19 @@ footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
-  <!-- decorative anatomical hand -->
-  <svg class="handbg" viewBox="0 0 300 340" fill="none">
-    <path d="M90 300V150c0-9 14-9 14 0v70m0-70V95c0-9 14-9 14 0v125m0-125V80c0-9 14-9 14 0v140m0-125v-10c0-9 14-9 14 0v95c0 40-24 62-58 62-20 0-33-8-43-24l-24-38c-6-10 8-20 16-11l25 28" stroke="#8FC0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <line x1="60" y1="170" x2="90" y2="185" stroke="#8FC0FF" stroke-width="2" stroke-linecap="round"/>
-    <circle cx="104" cy="150" r="3" fill="#8FC0FF"/><circle cx="118" cy="95" r="3" fill="#8FC0FF"/><circle cx="132" cy="90" r="3" fill="#8FC0FF"/>
-  </svg>
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-copy reveal">
         <span class="kicker"><span class="dot"></span>Ortopedia · Cirurgia da Mão · Intervenção em Dor</span>
-        <h1>Dor nas mãos ou dor persistente? <em>Existe um caminho para viver melhor.</em></h1>
+        <h1>Cuidar da dor começa por <em>compreender como ela afeta a sua vida.</em></h1>
         <div class="rule"></div>
-        <p class="lead">Com o <b>Dr. Carlucci Martins</b>, ortopedista especialista em <b>cirurgia da mão</b>, com pós-graduação em <b>intervenção em dor e medicina regenerativa</b>, você recebe diagnóstico preciso e um plano individualizado — com cirurgia somente quando necessária.</p>
+        <p class="lead">Cada pessoa sente a dor de um jeito. Por isso, a consulta é um espaço de <b>escuta, avaliação cuidadosa e decisões compartilhadas</b>, considerando diferentes possibilidades de cuidado e cirurgia apenas quando indicada.</p>
         <div class="hero-actions">
-          <a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Carlucci." class="cta" target="_blank" rel="noopener">Agendar sua consulta
+          <a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Carlucci." class="cta" target="_blank" rel="noopener">Conversar com a equipe
             <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
           </a>
         </div>
-        <span class="place"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 1114 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Atendimento presencial e telemedicina · Divinópolis — MG</span>
+        <span class="place"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 1114 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Atendimento presencial e telemedicina · Divinópolis, MG</span>
       </div>
 
       <div class="hero-photo reveal">
@@ -495,54 +512,54 @@ footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
 <!-- ============ CONDITIONS ============ -->
 <section class="conditions pad interactive-dark" id="conditions">
   <div class="wrap center">
-    <span class="eyebrow on-dark reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>O que tratamos</span>
-    <h2 class="sec-title on-dark reveal">Principais patologias e tratamentos</h2>
-    <p class="sec-sub reveal" style="color:#9DB6D6">Cuidado especializado para problemas da mão e abordagens modernas para o controle da dor.</p>
+    <span class="eyebrow on-dark reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Áreas de cuidado</span>
+    <h2 class="sec-title on-dark reveal">A dor pode ter diferentes origens e aparecer em diferentes regiões</h2>
+    <p class="sec-sub reveal" style="color:#9DB6D6">A avaliação considera sua história, seus movimentos e o impacto dos sintomas na rotina para compreender quais caminhos podem fazer sentido.</p>
     <div class="cond-grid">
       <div class="cond-card reveal">
-        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M8 20V8m0 0a4 4 0 118 0m-8 0h8m0 12V8" stroke-linecap="round"/><path d="M6 14h12" stroke-linecap="round"/></svg></div>
-        <h3>Síndrome do Túnel do Carpo</h3>
-        <p>Formigamento, dormência, perda de força e dor noturna nas mãos, com tratamento definido conforme cada estágio.</p>
-      </div>
-      <div class="cond-card reveal">
-        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M5 12c3-4 11-4 14 0-3 4-11 4-14 0z" stroke-linejoin="round"/><path d="M9 12h6" stroke-linecap="round"/></svg></div>
-        <h3>Dedo em Gatilho</h3>
-        <p>Dedo que trava, estala ou apresenta dor ao dobrar, tratado de forma conservadora, intervencionista ou cirúrgica.</p>
-      </div>
-      <div class="cond-card reveal">
-        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M4 15l4-9 4 5 3-3 5 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Tendinite de De Quervain</h3>
-        <p>Dor do lado do polegar e do punho, frequentemente pior ao segurar objetos, movimentar a mão ou carregar peso.</p>
-      </div>
-      <div class="cond-card reveal">
-        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M7 4v9a5 5 0 0010 0V4" stroke-linecap="round"/><path d="M4 20h16" stroke-linecap="round"/></svg></div>
-        <h3>Epicondilite</h3>
-        <p>Dor na região do cotovelo associada à sobrecarga dos tendões, comum em atividades repetitivas e esportivas.</p>
-      </div>
-      <div class="cond-card reveal">
-        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2" stroke-linecap="round"/></svg></div>
-        <h3>Rizartrose</h3>
-        <p>Desgaste na base do polegar que causa dor, perda de força e dificuldade para pinçar, abrir potes ou segurar objetos.</p>
-      </div>
-      <div class="cond-card reveal">
-        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M12 3v7m0 0l-3 8h6l-3-8z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="1.6"/></svg></div>
-        <h3>Cisto Sinovial</h3>
-        <p>Nódulo frequente no punho ou na mão, que pode causar desconforto, limitação de movimento ou incômodo estético.</p>
-      </div>
-      <div class="cond-card reveal">
-        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M8 20c-2-4-2-8 0-12 1-2 4-2 5 0 1-3 4-3 5-1 2 4 1 9-2 13" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Fascite Plantar</h3>
-        <p>Dor na planta do pé ou no calcanhar, especialmente nos primeiros passos do dia ou após períodos de repouso.</p>
+        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M4 12h4l2-5 4 10 2-5h4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Tratamento Intervencionista da Dor</h3>
+        <p>Procedimentos pouco invasivos podem ser considerados para investigar ou cuidar de pontos específicos relacionados à dor.</p>
       </div>
       <div class="cond-card reveal">
         <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M4 12h4l2-5 4 10 2-5h4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>Infiltração para Dor</h3>
-        <p>Aplicação precisa de medicamentos em estruturas específicas para controlar inflamação e reduzir a dor.</p>
+        <p>Em situações selecionadas, a infiltração pode fazer parte do cuidado para reduzir inflamação e aliviar sintomas.</p>
       </div>
       <div class="cond-card reveal">
-        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M4 12h4l2-5 4 10 2-5h4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Tratamento Intervencionista da Dor</h3>
-        <p>Procedimentos minimamente invasivos que ajudam a localizar e tratar a origem da dor com maior precisão.</p>
+        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M7 4v9a5 5 0 0010 0V4" stroke-linecap="round"/><path d="M4 20h16" stroke-linecap="round"/></svg></div>
+        <h3>Epicondilite</h3>
+        <p>O desconforto no cotovelo pode aparecer com esforços repetitivos, atividades esportivas ou sobrecarga dos tendões.</p>
+      </div>
+      <div class="cond-card reveal">
+        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M8 20c-2-4-2-8 0-12 1-2 4-2 5 0 1-3 4-3 5-1 2 4 1 9-2 13" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Fascite Plantar</h3>
+        <p>A sensibilidade na planta do pé ou no calcanhar costuma ser percebida nos primeiros passos ou depois do repouso.</p>
+      </div>
+      <div class="cond-card reveal">
+        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M8 20V8m0 0a4 4 0 118 0m-8 0h8m0 12V8" stroke-linecap="round"/><path d="M6 14h12" stroke-linecap="round"/></svg></div>
+        <h3>Síndrome do Túnel do Carpo</h3>
+        <p>Formigamento, dormência, perda de força e incômodo noturno podem interferir no sono e nas atividades diárias.</p>
+      </div>
+      <div class="cond-card reveal">
+        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M5 12c3-4 11-4 14 0-3 4-11 4-14 0z" stroke-linejoin="round"/><path d="M9 12h6" stroke-linecap="round"/></svg></div>
+        <h3>Dedo em Gatilho</h3>
+        <p>Travamentos, estalos ou sensibilidade ao dobrar o dedo podem tornar movimentos simples mais desconfortáveis.</p>
+      </div>
+      <div class="cond-card reveal">
+        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M4 15l4-9 4 5 3-3 5 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Tendinite de De Quervain</h3>
+        <p>O incômodo próximo ao polegar e ao punho pode aumentar ao segurar objetos, movimentar a mão ou carregar peso.</p>
+      </div>
+      <div class="cond-card reveal">
+        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2" stroke-linecap="round"/></svg></div>
+        <h3>Rizartrose</h3>
+        <p>A alteração na base do polegar pode causar sensibilidade e dificultar tarefas como pinçar, abrir potes ou segurar objetos.</p>
+      </div>
+      <div class="cond-card reveal">
+        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M12 3v7m0 0l-3 8h6l-3-8z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="1.6"/></svg></div>
+        <h3>Cisto Sinovial</h3>
+        <p>Esse nódulo pode surgir no punho ou na mão e, em alguns casos, causar desconforto ou limitação dos movimentos.</p>
       </div>
     </div>
   </div>
@@ -554,9 +571,9 @@ footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
     <div class="pain-head">
       <div class="reveal">
         <span class="eyebrow on-dark"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>Mapa interativo da dor</span>
-        <h2>Aponte no corpo <em>onde a dor aparece.</em></h2>
+        <h2>Onde você sente que o corpo <em>pede mais atenção?</em></h2>
       </div>
-      <p class="reveal">Toque em um dos pontos luminosos para explorar sinais relacionados às regiões atendidas pelo Dr. Carlucci. Você pode escolher pela vista da frente ou das costas.</p>
+      <p class="reveal">Use o mapa para indicar a região que incomoda. Ele é um ponto de partida para organizar o que você sente, sem tentar chegar a um diagnóstico sozinho.</p>
     </div>
     <div class="pain-explorer reveal" id="pain-explorer">
       <div class="pain-visual" id="pain-visual" aria-label="Mapa anatômico interativo com corpo giratório">
@@ -592,15 +609,15 @@ footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
       <div class="pain-panel" aria-live="polite">
         <div class="pain-panel-top"><span class="pain-step" id="pain-step">Ponto 01 de 08</span><span class="pain-location" id="pain-location">Cabeça e face</span></div>
         <div class="pain-content" id="pain-content">
-          <span class="pain-insight-label">Região selecionada</span>
-          <h3 id="pain-title">Dor na cabeça ou na face</h3>
-          <p id="pain-description">A localização, a duração e os fatores associados ajudam a compreender possíveis origens e a definir quando uma investigação específica ou encaminhamento é necessário.</p>
-          <div class="pain-motion"><span>Sinais comuns</span><strong id="pain-action">Dor localizada, pressão, sensibilidade ou dor facial</strong></div>
-          <span class="pain-poss-label">Possibilidades que podem ser investigadas</span>
-          <div class="pain-possibilities" id="pain-possibilities"><span>Avaliação da origem da dor</span><span>Dor facial</span><span>Encaminhamento quando necessário</span></div>
+          <span class="pain-insight-label">Região que você escolheu</span>
+          <h3 id="pain-title">Incômodo na cabeça ou na face</h3>
+          <p id="pain-description">Perceber onde o desconforto aparece, há quanto tempo está presente e o que o acompanha ajuda a organizar a história que será conversada na consulta.</p>
+          <div class="pain-motion"><span>O que observar</span><strong id="pain-action">Pressão, sensibilidade ou incômodo na face</strong></div>
+          <span class="pain-poss-label">O que pode ser avaliado durante a consulta</span>
+          <div class="pain-possibilities" id="pain-possibilities"><span>Origem do desconforto</span><span>Dor facial</span><span>Encaminhamento quando necessário</span></div>
           <div class="pain-note"><i>i</i><span>O mapa é informativo. O diagnóstico e a indicação de tratamento dependem de avaliação médica individual.</span></div>
         </div>
-        <a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Carlucci." class="cta sm" target="_blank" rel="noopener">Quero avaliar essa dor
+        <a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Carlucci." class="cta sm" target="_blank" rel="noopener">Quero conversar sobre isso
           <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
         </a>
       </div>
@@ -608,15 +625,29 @@ footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
   </div>
 </section>
 
+<!-- ============ VIDEO ============ -->
+<section class="care-video" id="video">
+  <div class="wrap">
+    <div class="care-video-card reveal">
+      <div class="care-video-copy">
+        <small>Uma conversa sobre cuidado</small>
+        <h2>Informação também faz parte de uma escolha mais tranquila.</h2>
+        <p>Neste vídeo, conversamos de forma simples sobre os sinais do corpo e as possibilidades de cuidado, para que você se sinta mais seguro em cada etapa.</p>
+        <a class="care-video-link" href="https://www.instagram.com/dr.carluccimartins/reel/DaTqzdHhYou/" target="_blank" rel="noopener">Ver publicação original <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="care-video-shell">
+        <iframe src="https://www.instagram.com/reel/DaTqzdHhYou/embed/" title="Vídeo do Dr. Carlucci Martins sobre cuidado e tratamento" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ STATEMENT ============ -->
 <section class="statement">
-  <svg class="handbg" viewBox="0 0 300 340" fill="none">
-    <path d="M90 300V150c0-9 14-9 14 0v70m0-70V95c0-9 14-9 14 0v125m0-125V80c0-9 14-9 14 0v140m0-125v-10c0-9 14-9 14 0v95c0 40-24 62-58 62-20 0-33-8-43-24l-24-38c-6-10 8-20 16-11l25 28" stroke="#8FC0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
   <div class="wrap reveal">
-    <h2>Tratar a dor é mais do que aliviar o sintoma.<br><em>É encontrar a origem.</em></h2>
-    <p>Um diagnóstico preciso permite escolher o tratamento certo — de medidas conservadoras e procedimentos modernos à cirurgia, somente quando ela realmente é necessária.</p>
-    <a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Carlucci." class="cta" style="margin:0 auto" target="_blank" rel="noopener">Agendar minha avaliação
+    <h2>A dor não acontece separada da vida.<br><em>Ela afeta sono, movimento e rotina.</em></h2>
+    <p>Por isso, o cuidado começa pela escuta e por uma avaliação atenta. A partir daí, as possibilidades são conversadas com clareza e escolhidas de forma individual.</p>
+    <a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Carlucci." class="cta" style="margin:0 auto" target="_blank" rel="noopener">Conversar com a equipe
       <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
     </a>
   </div>
@@ -627,16 +658,16 @@ footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
   <div class="wrap">
     <div class="fw-grid">
       <div class="fw-head reveal">
-        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M4 20c0-3 2-5 5-5s5 2 5 5"/><path d="M17 11l2 2 3-3"/></svg>Diferenciais</span>
-        <h2 style="margin-top:18px">Precisão técnica com <em>cuidado humano</em></h2>
-        <p>Uma abordagem que une especialização, tratamentos modernos e decisões compartilhadas, respeitando o que cada paciente realmente precisa.</p>
+        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M4 20c0-3 2-5 5-5s5 2 5 5"/><path d="M17 11l2 2 3-3"/></svg>Como cuidamos</span>
+        <h2 style="margin-top:18px">Conhecimento técnico, <em>escuta e decisões compartilhadas</em></h2>
+        <p>O cuidado reúne formação médica, atenção ao que você relata e espaço para compreender as opções antes de decidir cada etapa.</p>
         <div class="fw-list">
           <div class="fw-item"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg></span><p><b>Especialista em Cirurgia da Mão</b></p></div>
           <div class="fw-item"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg></span><p><b>Pós-graduação em Intervenção em Dor e Medicina Regenerativa</b></p></div>
-          <div class="fw-item"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg></span><p><b>Diagnóstico preciso</b> para entender a origem do problema.</p></div>
-          <div class="fw-item"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg></span><p><b>Tratamentos modernos</b> e individualizados.</p></div>
-          <div class="fw-item"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg></span><p><b>Atendimento humanizado</b>, com escuta e clareza.</p></div>
-          <div class="fw-item"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg></span><p><b>Cirurgia apenas quando necessária</b>.</p></div>
+          <div class="fw-item"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg></span><p><b>Investigação cuidadosa</b> para compreender a possível origem da dor.</p></div>
+          <div class="fw-item"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg></span><p><b>Opções de tratamento</b> apresentadas de maneira clara e individual.</p></div>
+          <div class="fw-item"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg></span><p><b>Tempo para escutar</b> sua história e acolher suas dúvidas.</p></div>
+          <div class="fw-item"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg></span><p><b>Cirurgia considerada apenas quando indicada</b>.</p></div>
         </div>
       </div>
       <div class="fw-photo reveal">
@@ -652,39 +683,39 @@ footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
 <section class="steps interactive-dark" id="steps">
   <div class="wrap">
     <div class="center">
-      <span class="eyebrow on-dark reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>Como funciona a consulta</span>
+      <span class="eyebrow on-dark reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>Como acontece o cuidado</span>
     </div>
     <div class="steps-grid">
       <div class="steps-left reveal">
-        <h2>Passo a passo até você voltar a viver sem dor</h2>
+        <h2>Do primeiro contato ao acompanhamento, cada etapa é conversada</h2>
         <div class="photo-frame" style="border-radius:20px">
           <img class="site-photo consult-doctor" src="assets/images/clinica-recepcao.webp" alt="Recepção da clínica onde o Dr. Carlucci Martins atende" width="1360" height="907" loading="lazy">
         </div>
       </div>
       <div class="acc reveal" id="steps-acc">
         <div class="acc-item open">
-          <div class="acc-head"><span class="num">01</span><span class="t">Agendamento pelo WhatsApp</span><span class="pm"></span></div>
-          <div class="acc-body"><p>Você fala diretamente com a equipe, tira as primeiras dúvidas e escolhe o melhor horário — de forma simples e rápida.</p></div>
+          <div class="acc-head"><span class="num">01</span><span class="t">Primeiro contato</span><span class="pm"></span></div>
+          <div class="acc-body"><p>Acolhemos suas primeiras dúvidas e ajudamos a encontrar um horário adequado para a consulta.</p></div>
         </div>
         <div class="acc-item">
-          <div class="acc-head"><span class="num">02</span><span class="t">Avaliação clínica detalhada</span><span class="pm"></span></div>
-          <div class="acc-body"><p>Uma consulta que realmente escuta a sua história, examina com cuidado e entende a raiz do problema — não apenas o sintoma.</p></div>
+          <div class="acc-head"><span class="num">02</span><span class="t">Uma consulta com escuta</span><span class="pm"></span></div>
+          <div class="acc-body"><p>Você tem espaço para contar quando a dor começou, como ela se manifesta e de que maneira interfere na sua rotina.</p></div>
         </div>
         <div class="acc-item">
-          <div class="acc-head"><span class="num">03</span><span class="t">Diagnóstico preciso</span><span class="pm"></span></div>
-          <div class="acc-body"><p>Quando necessário, solicitação de exames de imagem para confirmar o diagnóstico e definir o caminho mais seguro.</p></div>
+          <div class="acc-head"><span class="num">03</span><span class="t">Compreensão do quadro</span><span class="pm"></span></div>
+          <div class="acc-body"><p>O exame clínico e, quando necessários, exames complementares ajudam a compreender as possíveis causas dos sintomas.</p></div>
         </div>
         <div class="acc-item">
-          <div class="acc-head"><span class="num">04</span><span class="t">Plano de tratamento sob medida</span><span class="pm"></span></div>
-          <div class="acc-body"><p>Do conservador (medicação, infiltração, reabilitação) à cirurgia — sempre a conduta certa para o seu caso, com clareza sobre cada opção.</p></div>
+          <div class="acc-head"><span class="num">04</span><span class="t">Escolhas compartilhadas</span><span class="pm"></span></div>
+          <div class="acc-body"><p>As possibilidades de cuidado são explicadas com calma, considerando benefícios, limites e o que faz sentido para aquele momento.</p></div>
         </div>
         <div class="acc-item">
-          <div class="acc-head"><span class="num">05</span><span class="t">Tratamento e acompanhamento</span><span class="pm"></span></div>
-          <div class="acc-body"><p>Condução próxima em cada etapa, ajustando o que for preciso para garantir a melhor evolução possível.</p></div>
+          <div class="acc-head"><span class="num">05</span><span class="t">Cuidado ao longo do tratamento</span><span class="pm"></span></div>
+          <div class="acc-body"><p>A evolução é acompanhada ao longo do tempo, com ajustes quando necessários e espaço para novas dúvidas.</p></div>
         </div>
         <div class="acc-item">
-          <div class="acc-head"><span class="num">06</span><span class="t">Retorno da função e alta</span><span class="pm"></span></div>
-          <div class="acc-body"><p>O objetivo final: você de volta às suas atividades, com força, mobilidade e qualidade de vida recuperadas.</p></div>
+          <div class="acc-head"><span class="num">06</span><span class="t">Retorno às atividades</span><span class="pm"></span></div>
+          <div class="acc-body"><p>O objetivo é apoiar a retomada das atividades com mais conforto e segurança, respeitando o ritmo de cada pessoa.</p></div>
         </div>
       </div>
     </div>
@@ -694,7 +725,7 @@ footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
 <!-- ============ ABOUT ============ -->
 <section class="about" id="about">
   <div class="wrap">
-    <div class="center"><span class="eyebrow reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l7 4v6c0 5-3 8-7 10-4-2-7-5-7-10V6z"/></svg>Sobre o Dr. Carlucci</span></div>
+    <div class="center"><span class="eyebrow reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l7 4v6c0 5-3 8-7 10-4-2-7-5-7-10V6z"/></svg>Nossa atuação</span></div>
     <div class="about-grid">
       <div class="about-frame reveal">
         <img class="site-photo profile-doctor" src="assets/images/dr-carlucci-cirurgia-3.jpg" alt="Dr. Carlucci Martins atuando em cirurgia" width="1350" height="1800" loading="lazy">
@@ -702,11 +733,11 @@ footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
       <div class="about-copy reveal">
         <h2>Dr. Carlucci Martins</h2>
         <div class="crm">CRM-MG 55461 · RQE Ortopedia e Traumatologia 39238 · RQE Cirurgia da Mão 45154<br>Pós-graduação em Intervenção em Dor e Medicina Regenerativa</div>
-        <p>Médico ortopedista e traumatologista, especialista em <b>cirurgia da mão</b>, com atuação em <b>intervenção em dor e medicina regenerativa</b>. Minha missão é ajudar você a recuperar função, autonomia e qualidade de vida.</p>
-        <p>Minha atuação é guiada por <b>diagnóstico preciso e evidência científica</b>: cada conduta — do tratamento conservador aos procedimentos intervencionistas e à cirurgia — é escolhida com critério e explicada com clareza.</p>
-        <p class="lead-line">Mais do que tratar o sintoma, eu investigo a causa.</p>
-        <p>Atendo de forma próxima e personalizada, porque cada pessoa, cada dor e cada história merecem um cuidado feito sob medida.</p>
-        <a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Carlucci." class="cta" target="_blank" rel="noopener">Agendar sua consulta
+        <p>Nossa atuação reúne ortopedia e traumatologia, especialização em <b>cirurgia da mão</b> e formação em <b>intervenção em dor e medicina regenerativa</b>. Esse conhecimento nos permite olhar para dores que surgem em diferentes regiões do corpo, sem perder de vista a pessoa por trás do sintoma.</p>
+        <p>Durante a consulta, buscamos compreender não apenas onde dói, mas também quando começou, o que piora ou alivia e como isso tem afetado o sono, os movimentos e a rotina.</p>
+        <p class="lead-line">O cuidado começa pela escuta e continua com decisões compartilhadas.</p>
+        <p>Quando há mais de um caminho possível, conversamos sobre cada opção com clareza. Tratamentos conservadores, procedimentos intervencionistas e cirurgia são considerados de acordo com a necessidade de cada caso.</p>
+        <a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Carlucci." class="cta" target="_blank" rel="noopener">Falar com a equipe
           <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
         </a>
       </div>
@@ -715,10 +746,10 @@ footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
 </section>
 
 <!-- ============ TESTIMONIALS ============ -->
-<section class="testi">
+<section class="testi" id="avaliacoes">
   <div class="wrap">
     <div class="testi-head reveal">
-      <h2>Histórias reais. Recuperações <em>reais.</em></h2>
+      <h2>Experiências compartilhadas por <em>pacientes.</em></h2>
       <a class="rating-summary" href="https://www.google.com/maps/place/Dr.+Carlucci+Martins+Lopes+%7C+Ortopedista+e+Cirurgi%C3%A3o+da+M%C3%A3o/data=!4m2!3m1!1s0x0:0xcec53adebdbbd355" target="_blank" rel="noopener" aria-label="Abrir as 85 avaliações do Dr. Carlucci no Google"><b data-count="5" data-decimals="1">5,0</b><span class="stars">★★★★★</span><span><strong data-count="85">85</strong> avaliações no Google</span></a>
     </div>
     <div class="testi-scroll reveal">
@@ -740,31 +771,39 @@ footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
 <section class="faq interactive-dark" id="faq">
   <div class="wrap center">
     <span class="eyebrow on-dark reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 015 0c0 1.7-2.5 2-2.5 4"/><circle cx="12" cy="17" r=".6" fill="#7FB0F8"/></svg>Dúvidas frequentes</span>
-    <h2 class="sec-title on-dark reveal">Perguntas que todo paciente faz</h2>
+    <h2 class="sec-title on-dark reveal">Algumas dúvidas que podem surgir antes da consulta</h2>
     <div class="faq-wrap" id="faq-acc">
       <div class="faq-item open">
         <div class="faq-q">Toda dor precisa de cirurgia?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
-        <div class="faq-a"><p>Não. A maioria dos casos é tratada de forma conservadora — com medicação, reabilitação ou infiltração. A cirurgia é indicada com critério, apenas quando é o melhor caminho para o seu caso.</p></div>
+        <div class="faq-a"><p>Não. Há diferentes formas de cuidado, como acompanhamento clínico, medicação, reabilitação e procedimentos intervencionistas. A cirurgia é considerada somente quando a avaliação mostra que ela pode ser necessária.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Qual a diferença entre ortopedista e especialista em mão?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
-        <div class="faq-a"><p>O especialista em cirurgia da mão é o ortopedista com formação específica para tratar as estruturas complexas da mão, punho e antebraço — ossos, tendões, nervos e articulações — com maior precisão diagnóstica e cirúrgica.</p></div>
+        <div class="faq-q">Quando vale a pena procurar avaliação para uma dor?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
+        <div class="faq-a"><p>Quando a dor persiste, se repete, limita movimentos, altera o sono ou começa a interferir na rotina, uma avaliação pode ajudar a compreender melhor o quadro. Sintomas intensos ou que surgem após um trauma também merecem atenção.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Sinto formigamento nas mãos à noite. O que pode ser?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
-        <div class="faq-a"><p>É um sintoma clássico da síndrome do túnel do carpo, mas pode ter outras causas. Só uma avaliação clínica cuidadosa — e, se necessário, exames — pode confirmar o diagnóstico e definir o tratamento certo.</p></div>
+        <div class="faq-q">A dor precisa estar muito forte para ser avaliada?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
+        <div class="faq-a"><p>Não. A intensidade é apenas uma parte da história. A duração, a frequência, os sintomas associados e o impacto na sua vida também ajudam a entender quando uma investigação é importante.</p></div>
       </div>
       <div class="faq-item">
         <div class="faq-q">O que é tratamento intervencionista da dor?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
-        <div class="faq-a"><p>É uma abordagem que utiliza procedimentos minimamente invasivos para investigar e tratar pontos específicos relacionados à dor. A indicação depende da causa, da intensidade dos sintomas e da avaliação individual.</p></div>
+        <div class="faq-a"><p>É uma área dedicada a avaliar e cuidar da dor por meio de procedimentos pouco invasivos, quando eles são indicados. A decisão depende da origem provável dos sintomas, do exame clínico e das necessidades de cada pessoa.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">O que fazemos na intervenção em dor?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
+        <div class="faq-a"><p>Buscamos compreender as possíveis fontes e os mecanismos da dor, além de observar como os sintomas afetam o movimento, o sono e a rotina. Quando indicado, podemos propor infiltrações, bloqueios diagnósticos ou terapêuticos e outros procedimentos pouco invasivos. Também podemos incluir medicação, reabilitação e acompanhamento com outros profissionais no cuidado.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Os procedimentos de intervenção em dor têm comprovação científica?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
+        <div class="faq-a"><p>Existem procedimentos respaldados por estudos e diretrizes para situações específicas, mas a evidência não é igual para todas as técnicas nem para todos os tipos de dor. Por isso, cada indicação deve considerar o diagnóstico, os benefícios esperados, os riscos, as alternativas disponíveis e as preferências do paciente.</p></div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Como funciona o pagamento? Atende convênios?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
-        <div class="faq-a"><p>O atendimento está disponível pelos convênios Unimed e Bradesco, além da modalidade particular. A equipe confirma previamente a cobertura, as autorizações necessárias e as condições do atendimento pelo WhatsApp.</p></div>
+        <div class="faq-a"><p>Há atendimento pelos convênios Unimed e Bradesco, além da modalidade particular. Podemos orientar pelo WhatsApp sobre cobertura, autorizações e outras informações antes da consulta.</p></div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Infiltração é indicada para qualquer tipo de dor?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
-        <div class="faq-a"><p>Não. A infiltração é indicada somente quando o diagnóstico e o quadro clínico mostram que ela pode trazer benefício. O local, o medicamento e a técnica são definidos individualmente.</p></div>
+        <div class="faq-a"><p>Não. Ela é considerada apenas quando a avaliação indica que pode fazer parte do cuidado. O local, a medicação e a técnica são definidos individualmente e explicados antes do procedimento.</p></div>
       </div>
     </div>
   </div>
@@ -786,6 +825,53 @@ footer{background:var(--navy-800);color:#fff;padding:80px 0 40px}
         <iframe src="https://maps.google.com/maps?q=Avenida%20Ant%C3%B4nio%20Ol%C3%ADmpio%20de%20Morais%2C%20857%2C%20Centro%2C%20Divin%C3%B3polis%20MG&amp;z=16&amp;output=embed" title="Localização do consultório do Dr. Carlucci Martins no Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </div>
+
+    <div class="footer-directory reveal">
+      <div class="footer-identity">
+        <div class="footer-name">
+          <h2>Dr. Carlucci Martins</h2>
+          <span class="verified-badge" role="img" aria-label="Credenciais profissionais identificadas no site" title="Credenciais profissionais">✓</span>
+        </div>
+        <strong>Ortopedia, intervenção em dor e cirurgia da mão</strong>
+        <p>Acompanhamos cada pessoa com escuta, avaliação cuidadosa e decisões compartilhadas sobre as possibilidades de cuidado.</p>
+        <div class="footer-credentials">
+          CRM-MG 55461<br>
+          RQE Ortopedia e Traumatologia 39238<br>
+          RQE Cirurgia da Mão 45154<br>
+          Pós-graduação em Intervenção em Dor e Medicina Regenerativa<br>
+          Responsável técnico pelo conteúdo médico desta página
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3>A página</h3>
+        <nav aria-label="Navegação do rodapé">
+          <a href="#top">Início</a>
+          <a href="#conditions">Áreas de cuidado</a>
+          <a href="#mapa-da-dor">Mapa da dor</a>
+          <a href="#steps">A consulta</a>
+        </nav>
+      </div>
+
+      <div class="footer-column">
+        <h3>Informações</h3>
+        <nav aria-label="Informações do site">
+          <a href="#about">Nossa atuação</a>
+          <a href="#avaliacoes">Avaliações</a>
+          <a href="#faq">Dúvidas frequentes</a>
+        </nav>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contato</h3>
+        <div class="footer-contact-list">
+          <span><b>WhatsApp</b><a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Carlucci." target="_blank" rel="noopener">(37) 9 9958-0303</a></span>
+          <span><b>Instagram</b><a href="https://www.instagram.com/dr.carluccimartins/" target="_blank" rel="noopener">@dr.carluccimartins</a></span>
+          <span><b>Endereço</b>Avenida Antônio Olímpio de Morais, 857<br>3º andar · Centro · Divinópolis/MG</span>
+        </div>
+      </div>
+    </div>
+
     <div class="foot-bottom">
       <p class="disc">Todas as informações apresentadas neste site têm caráter informativo e não substituem a avaliação médica individualizada.</p>
       <p class="copy">© 2026 Dr. Carlucci Martins · CRM-MG 55461 · RQE Ortopedia e Traumatologia 39238 · RQE Cirurgia da Mão 45154</p>
@@ -816,7 +902,7 @@ burger.addEventListener('click',()=>{burger.classList.toggle('x');links.classLis
 links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('x');links.classList.remove('show')}));
 // ticker (duplicate for seamless loop)
 const t=document.getElementById('ticker');
-const seg='<span>CIRURGIA DA MÃO <i class="muted">INTERVENÇÃO EM DOR · Dr. Carlucci Martins</i></span>';
+const seg='<span>INTERVENÇÃO EM DOR <i class="muted">CIRURGIA DA MÃO · Dr. Carlucci Martins</i></span>';
 t.innerHTML=(seg.replace('<i','<span').replace('</i>','</span>')).repeat(8);
 // accordion generic
 function bindAcc(container,itemSel){
@@ -915,14 +1001,14 @@ document.querySelectorAll('.acc-head,.faq-q').forEach(head=>{
 
 // Interactive pain map: selectable regions on friendly front-and-back human views
 const painData={
-  cabeca:{step:'01',location:'Cabeça e face',action:'Dor localizada, pressão, sensibilidade ou dor facial',title:'Dor na cabeça ou na face',description:'A localização, a duração e os fatores associados ajudam a compreender possíveis origens e a definir quando uma investigação específica ou encaminhamento é necessário.',possibilities:['Avaliação da origem da dor','Dor facial','Encaminhamento quando necessário']},
-  cervical:{step:'02',location:'Cervical',action:'Rigidez, limitação ou dor que se estende para ombros e braços',title:'Dor ou rigidez na região cervical',description:'O desconforto no pescoço pode limitar movimentos e, em alguns casos, irradiar para ombros e braços. A avaliação busca identificar as estruturas relacionadas aos sintomas.',possibilities:['Cervicalgia','Dor irradiada','Tratamento intervencionista']},
-  ombro:{step:'03',location:'Ombro e braço',action:'Elevar o braço, vestir-se ou dormir sobre o lado dolorido',title:'Dor no ombro ou no braço durante os movimentos',description:'Dor ao elevar o braço, carregar peso ou repetir tarefas pode estar relacionada a tendões, articulações ou à irradiação de outras regiões.',possibilities:['Tendinopatias','Epicondilite','Dor irradiada']},
-  mao:{step:'04',location:'Mão e punho',action:'Segurar, pinçar ou abrir objetos',title:'Dor, formigamento ou perda de força na mão',description:'Sintomas no punho, na palma ou na base do polegar podem ter origens diferentes. A localização e o tipo da dor ajudam a direcionar a investigação.',possibilities:['Túnel do Carpo','De Quervain','Rizartrose','Cisto Sinovial']},
-  lombar:{step:'05',location:'Coluna lombar',action:'Sentar, levantar, permanecer em pé ou caminhar',title:'Dor na parte baixa das costas',description:'A dor lombar pode permanecer localizada ou se estender para outras regiões. O exame clínico ajuda a diferenciar as possíveis estruturas envolvidas.',possibilities:['Lombalgia','Dor irradiada','Tratamento intervencionista']},
-  quadril:{step:'06',location:'Quadril e pelve',action:'Caminhar, levantar da cadeira ou deitar de lado',title:'Dor no quadril ou na região da pelve',description:'O incômodo pode aparecer ao caminhar, permanecer sentado ou deitar sobre um dos lados. A origem pode ser articular, tendínea ou irradiada.',possibilities:['Dor articular','Tendinopatias','Infiltração quando indicada']},
-  joelho:{step:'07',location:'Joelho',action:'Agachar, subir escadas ou levantar-se',title:'Dor no joelho que limita movimentos',description:'Dor, inchaço ou dificuldade para apoiar e dobrar o joelho podem ter causas diferentes e precisam ser avaliados conforme a rotina e o histórico do paciente.',possibilities:['Desgaste articular','Sobrecarga tendínea','Infiltração quando indicada']},
-  pe:{step:'08',location:'Tornozelo e pé',action:'Apoiar o pé, caminhar ou dar os primeiros passos',title:'Dor no tornozelo, na planta do pé ou no calcanhar',description:'A região dolorida e o momento em que o incômodo aparece ajudam a diferenciar sobrecargas, inflamações e alterações do apoio.',possibilities:['Fascite Plantar','Tendinopatias','Avaliação do tornozelo']}
+  cabeca:{step:'01',location:'Cabeça e face',action:'Pressão, sensibilidade ou incômodo na face',title:'Incômodo na cabeça ou na face',description:'Perceber onde o desconforto aparece, há quanto tempo está presente e o que o acompanha ajuda a organizar a história que será conversada na consulta.',possibilities:['Origem do desconforto','Dor facial','Encaminhamento quando necessário']},
+  cervical:{step:'02',location:'Cervical',action:'Rigidez, limitação ou incômodo que se estende para ombros e braços',title:'Rigidez ou desconforto na região cervical',description:'Conte se o pescoço está mais rígido, se algum movimento incomoda ou se a sensação se estende para ombros e braços. Esses detalhes ajudam na avaliação.',possibilities:['Cervicalgia','Dor irradiada','Intervenção em dor']},
+  ombro:{step:'03',location:'Ombro e braço',action:'Elevar o braço, vestir-se ou dormir sobre o lado sensível',title:'Desconforto no ombro ou no braço',description:'Vale observar em quais movimentos o incômodo aparece e se ele interfere em tarefas, no trabalho ou no sono. A avaliação considera todo esse contexto.',possibilities:['Tendinopatias','Epicondilite','Dor irradiada']},
+  mao:{step:'04',location:'Mão e punho',action:'Segurar, pinçar ou abrir objetos',title:'Formigamento, sensibilidade ou perda de força na mão',description:'Sensações no punho, na palma ou na base do polegar podem se apresentar de formas diferentes. O que você percebe no dia a dia ajuda a orientar a conversa.',possibilities:['Túnel do Carpo','De Quervain','Rizartrose','Cisto Sinovial']},
+  lombar:{step:'05',location:'Coluna lombar',action:'Sentar, levantar, permanecer em pé ou caminhar',title:'Desconforto na parte baixa das costas',description:'Observe se a sensação permanece localizada ou se alcança outras regiões, e em quais momentos ela se torna mais presente. Essas informações ajudam a compreender o quadro.',possibilities:['Lombalgia','Dor irradiada','Intervenção em dor']},
+  quadril:{step:'06',location:'Quadril e pelve',action:'Caminhar, levantar da cadeira ou deitar de lado',title:'Desconforto no quadril ou na pelve',description:'Caminhar, permanecer sentado ou deitar de lado pode revelar padrões importantes. Na consulta, esses sinais são considerados junto com sua história.',possibilities:['Dor articular','Tendinopatias','Infiltração quando indicada']},
+  joelho:{step:'07',location:'Joelho',action:'Agachar, subir escadas ou levantar-se',title:'Sensibilidade ou limitação no joelho',description:'Inchaço, dificuldade para apoiar ou desconforto ao dobrar o joelho podem afetar cada pessoa de um jeito. A avaliação leva em conta sua rotina e seu histórico.',possibilities:['Desgaste articular','Sobrecarga tendínea','Infiltração quando indicada']},
+  pe:{step:'08',location:'Tornozelo e pé',action:'Apoiar o pé, caminhar ou dar os primeiros passos',title:'Desconforto no tornozelo, na planta do pé ou no calcanhar',description:'O local exato e o momento em que a sensação aparece, como ao acordar, caminhar ou repousar, ajudam a contar com mais clareza o que você está sentindo.',possibilities:['Fascite Plantar','Tendinopatias','Avaliação do tornozelo']}
 };
 const painExplorer=document.getElementById('pain-explorer');
 if(painExplorer){

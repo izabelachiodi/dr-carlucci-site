@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dr. Carlucci Martins | Intervenção em Dor e Cirurgia da Mão</title>
-<meta name="description" content="Cuidado ortopédico com atenção à história de cada paciente, atuação em intervenção em dor e especialização em cirurgia da mão.">
+<meta name="description" content="Avaliação ortopédica e tratamentos individualizados para dores musculoesqueléticas, com atuação em intervenção em dor, medicina regenerativa e cirurgia da mão.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -127,6 +127,8 @@ header.nav.scrolled{
 .hero .rule{width:78px;height:3px;background:var(--grad);border-radius:3px;margin:26px 0 22px}
 .hero .lead{font-size:1.06rem;color:#C9D6E7;max-width:460px}
 .hero .lead b{color:#fff;font-weight:600}
+.hero-focus{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;max-width:560px}
+.hero-focus span{padding:7px 10px;border:1px solid rgba(143,192,255,.18);border-radius:9px;background:rgba(255,255,255,.05);color:#D7E4F2;font-size:.72rem;font-weight:600}
 .hero-actions{margin:34px 0 20px;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
 .hero .place{display:inline-flex;align-items:center;gap:9px;color:#AFC2D8;font-size:.92rem;font-weight:500}
 .hero .place svg{width:18px;height:18px;stroke:var(--blue-300)}
@@ -159,9 +161,10 @@ header.nav.scrolled{
 .badge b{color:#fff;font-weight:600}
 .badge .ic{width:34px;height:34px;border-radius:9px;background:rgba(79,139,242,.16);display:grid;place-items:center;flex-shrink:0}
 .badge .ic svg{width:18px;height:18px;stroke:var(--blue-300)}
-.badge.b1{top:auto;bottom:34%;left:-38px;animation-delay:0s}
-.badge.b2{top:44%;right:-30px;animation-delay:1.2s}
-.badge.b3{bottom:16%;left:-24px;animation-delay:2.2s}
+.badge.b1{top:auto;bottom:42%;left:-38px;animation-delay:0s}
+.badge.b2{top:40%;right:-30px;animation-delay:1.2s}
+.badge.b3{bottom:22%;left:-24px;animation-delay:2.2s}
+.badge.b4{bottom:7%;right:-18px;animation-delay:3s}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
 
 /* ticker */
@@ -198,6 +201,34 @@ header.nav.scrolled{
 .cond-card .ci svg{width:28px;height:28px;stroke:var(--navy-700);fill:none}
 .cond-card h3{font-size:1.16rem;font-weight:700;color:var(--ink);margin-bottom:10px}
 .cond-card p{color:var(--slate);font-size:.95rem}
+.care-split{display:grid;gap:24px;margin-top:52px;text-align:left}
+.care-block{padding:clamp(25px,4vw,38px);border:1px solid rgba(143,192,255,.16);border-radius:22px;background:rgba(255,255,255,.045);box-shadow:0 24px 58px -38px rgba(0,0,0,.7)}
+.care-block-head{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;margin-bottom:24px}
+.care-block-head span{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:rgba(79,139,242,.16);color:var(--blue-300);font:700 .74rem "Sora"}
+.care-block h3{font-size:clamp(1.3rem,2.4vw,1.8rem);color:#fff}
+.care-block p{color:#AFC2D8;margin-top:6px}
+.care-tags{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.care-tag{position:relative;min-height:78px;display:flex;align-items:center;padding:18px 18px 18px 43px;border:1px solid rgba(143,192,255,.13);border-radius:14px;background:rgba(5,24,46,.56);color:#EAF2FB;font:600 .86rem "Sora";transition:transform .22s,border-color .22s,background .22s}
+.care-tag::before{content:"";position:absolute;left:18px;width:10px;height:10px;border-radius:50%;background:var(--blue-400);box-shadow:0 0 0 5px rgba(79,139,242,.12)}
+.care-tag:hover{transform:translateY(-3px);border-color:rgba(127,176,248,.45);background:rgba(18,51,86,.76)}
+.care-regions{grid-template-columns:repeat(7,1fr)}
+.care-regions .care-tag{min-height:90px;padding:46px 12px 14px;text-align:center;justify-content:center;font-size:.78rem}
+.care-regions .care-tag::before{left:50%;top:22px;transform:translateX(-50%)}
+
+/* ---------- PERSISTENT PAIN ---------- */
+.persistent-pain{background:#fff;padding:104px 0}
+.persistent-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(38px,7vw,82px);align-items:center}
+.persistent-copy h2{font-size:clamp(2rem,4vw,3.05rem);font-weight:800;margin:18px 0}
+.persistent-copy h2 em{font-style:normal;color:var(--blue-500)}
+.persistent-copy>p{color:var(--slate);font-size:1.03rem;margin:0 0 28px}
+.persistent-questions{display:grid;gap:11px}
+.persistent-questions li{list-style:none;position:relative;padding:13px 16px 13px 46px;border:1px solid var(--line);border-radius:13px;background:var(--paper);color:var(--navy-700);font-weight:600}
+.persistent-questions li::before{content:"?";position:absolute;left:14px;top:50%;width:22px;height:22px;transform:translateY(-50%);display:grid;place-items:center;border-radius:50%;background:var(--navy-800);color:var(--blue-300);font:700 .75rem "Sora"}
+.persistent-card{position:relative;padding:clamp(28px,4vw,46px);border-radius:24px;background:linear-gradient(145deg,var(--navy-900),#153F6B);color:#fff;box-shadow:var(--shadow-md);overflow:hidden}
+.persistent-card::after{content:"";position:absolute;width:260px;height:260px;right:-110px;top:-120px;border-radius:50%;border:1px solid rgba(127,176,248,.16);box-shadow:0 0 0 38px rgba(127,176,248,.035)}
+.persistent-card h3{font-size:clamp(1.45rem,2.6vw,2rem);margin-bottom:15px;position:relative;z-index:1}
+.persistent-card p{color:#BFD0E3;margin-bottom:28px;position:relative;z-index:1}
+.persistent-card .cta{position:relative;z-index:1}
 
 /* ---------- INTERACTIVE PAIN MAP ---------- */
 .pain-map{background:linear-gradient(145deg,#071A31 0%,#0D2948 64%,#123A63 100%);color:#fff;padding:110px 0;overflow:hidden}
@@ -253,19 +284,27 @@ header.nav.scrolled{
 .pain-note i{width:21px;height:21px;border-radius:50%;display:grid;place-items:center;background:var(--blue-500);color:#fff;font-style:normal;font-weight:700;flex-shrink:0}
 .pain-panel .cta{margin-top:auto;align-self:flex-start;position:relative;top:18px}
 
-/* ---------- VIDEO ---------- */
-.care-video{background:linear-gradient(180deg,#fff 0%,var(--paper) 100%);padding:100px 0}
-.care-video-card{position:relative;display:grid;grid-template-columns:1fr minmax(320px,430px);align-items:center;gap:clamp(34px,6vw,74px);padding:clamp(30px,5vw,58px);border-radius:24px;background:linear-gradient(125deg,var(--navy-900),#123B68 68%,#235EB9);color:#fff;box-shadow:var(--shadow-md);overflow:hidden}
-.care-video-card::after{content:"";position:absolute;left:-90px;bottom:-160px;width:370px;height:370px;border:1px solid rgba(255,255,255,.1);border-radius:50%;box-shadow:0 0 0 42px rgba(255,255,255,.026),0 0 0 84px rgba(255,255,255,.014);pointer-events:none}
-.care-video-copy{position:relative;z-index:1}
-.care-video-copy small{display:block;color:var(--blue-300);font:700 .68rem "Sora";letter-spacing:.12em;text-transform:uppercase;margin-bottom:13px}
-.care-video-copy h2{font-size:clamp(1.55rem,3vw,2.35rem);font-weight:800;max-width:620px}
-.care-video-copy p{color:#BFD0E3;font-size:1rem;max-width:560px;margin:18px 0 26px}
-.care-video-link{display:inline-flex;align-items:center;gap:13px;padding:8px 9px 8px 18px;border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(255,255,255,.08);font:700 .7rem "Sora";letter-spacing:.05em;text-transform:uppercase;color:#fff;transition:background .22s,transform .22s}
-.care-video-link:hover{background:rgba(255,255,255,.15);transform:translateY(-2px)}
-.care-video-link span{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--navy-800);font-size:1.05rem}
-.care-video-shell{position:relative;width:100%;max-width:430px;justify-self:end;overflow:hidden;border:1px solid rgba(255,255,255,.18);border-radius:18px;background:#fff;box-shadow:0 30px 55px -28px rgba(0,0,0,.7)}
-.care-video-shell iframe{display:block;width:100%;height:640px;border:0;background:#fff}
+/* ---------- TREATMENT PATHS ---------- */
+.treatments{background:var(--paper);padding:110px 0}
+.treatment-intro{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:end}
+.treatment-intro h2{font-size:clamp(2rem,4vw,3.05rem);font-weight:800;margin-top:18px}
+.treatment-intro h2 em{font-style:normal;color:var(--blue-500)}
+.treatment-intro p{color:var(--slate);font-size:1.04rem}
+.treatment-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:44px}
+.treatment-card{position:relative;padding:28px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:var(--shadow-sm);overflow:hidden}
+.treatment-card::before{content:attr(data-number);display:block;margin-bottom:16px;color:var(--blue-500);font:700 .72rem "Sora";letter-spacing:.12em}
+.treatment-card h3{font-size:1.18rem;margin-bottom:10px}
+.treatment-card p{color:var(--slate);font-size:.94rem}
+.procedure-gallery{display:grid;grid-template-columns:1.08fr .92fr .92fr;gap:14px;margin-top:22px}
+.procedure-photo{position:relative;height:300px;border-radius:18px;overflow:hidden;background:var(--navy-800)}
+.procedure-photo img{width:100%;height:100%;object-fit:cover;transition:transform .65s cubic-bezier(.2,.8,.2,1)}
+.procedure-photo:first-child img{object-position:center 32%}
+.procedure-photo:hover img{transform:scale(1.045)}
+.procedure-photo span{position:absolute;left:0;right:0;bottom:0;padding:42px 18px 16px;background:linear-gradient(180deg,transparent,rgba(4,18,34,.92));color:#EAF2FB;font:600 .72rem "Sora";letter-spacing:.05em}
+.treatment-highlight{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;margin-top:22px;padding:clamp(28px,4vw,42px);border-radius:22px;background:var(--navy-900);color:#fff}
+.treatment-highlight h3{font-size:clamp(1.45rem,2.8vw,2.1rem);max-width:760px}
+.treatment-highlight h3 em{font-style:normal;color:var(--blue-300)}
+.treatment-highlight p{color:#BFD0E3;margin-top:10px}
 
 /* ---------- STATEMENT ---------- */
 .statement{background:var(--grad-soft);color:#fff;text-align:center;padding:96px 0;position:relative;overflow:hidden}
@@ -399,15 +438,18 @@ footer{background:#071523;color:#fff;padding:80px 0 40px}
   .hero-grid,.fw-grid,.steps-grid,.about-grid,.foot-grid{grid-template-columns:1fr}
   .hero-photo{order:-1;min-height:auto}
   .photo-frame{height:400px}
-  .badge.b1{left:auto;right:6px;bottom:3%}.badge.b2{right:6px}.badge.b3{left:6px}
-  .cond-grid{grid-template-columns:1fr 1fr}
+  .badge{width:calc(50% - 10px);padding:10px 12px;font-size:.72rem;line-height:1.35}
+  .badge.b1{left:6px;right:auto;top:auto;bottom:92px}.badge.b2{right:6px;top:auto;bottom:92px}.badge.b3{left:6px;bottom:18px}.badge.b4{right:6px;bottom:18px}
+  .cond-grid,.care-tags{grid-template-columns:1fr 1fr}
+  .care-regions{grid-template-columns:repeat(4,1fr)}
+  .persistent-grid,.treatment-intro{grid-template-columns:1fr}
   .steps-left .photo-frame{max-width:420px;margin:0 auto}
   .about-frame,.fw-frame{max-width:420px;margin:0 auto}
   .pain-head{grid-template-columns:1fr}
   .pain-explorer{grid-template-columns:1fr}
   .pain-visual{width:100%;max-width:620px;margin:0 auto}
-  .care-video-card{grid-template-columns:1fr}
-  .care-video-shell{justify-self:center;max-width:390px}
+  .procedure-gallery{grid-template-columns:1fr 1fr}
+  .procedure-photo:first-child{grid-column:1/-1}
   .footer-directory{grid-template-columns:1.3fr 1fr}
 }
 @media(max-width:720px){
@@ -422,7 +464,7 @@ footer{background:#071523;color:#fff;padding:80px 0 40px}
   .burger.x span:nth-child(2){opacity:0}
   .burger.x span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
   .cond-grid{grid-template-columns:1fr}
-  .pad,.forwhom,.steps,.about,.testi,.faq,.care-video{padding-top:70px;padding-bottom:70px}
+  .pad,.forwhom,.steps,.about,.testi,.faq,.persistent-pain,.treatments{padding-top:70px;padding-bottom:70px}
   .hero{padding-top:120px}
   .cta{min-width:0;width:100%}
   .testi-scroll{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;padding-right:24px}
@@ -436,8 +478,10 @@ footer{background:#071523;color:#fff;padding:80px 0 40px}
   .pain-view-switch{top:10px}
   .pain-turn{bottom:10px;font-size:.6rem}
   .pain-hotspot span{font-size:.62rem}
-  .care-video-card{padding:28px 20px}
-  .care-video-shell iframe{height:600px}
+  .care-tags,.care-regions,.treatment-grid,.procedure-gallery{grid-template-columns:1fr}
+  .procedure-photo:first-child{grid-column:auto}
+  .procedure-photo{height:260px}
+  .treatment-highlight{grid-template-columns:1fr}
   .footer-directory{grid-template-columns:1fr;gap:32px;padding-top:42px}
   .footer-column h3{margin-bottom:15px}
 }
@@ -459,10 +503,10 @@ footer{background:#071523;color:#fff;padding:80px 0 40px}
     </a>
     <nav class="nav-links" id="navlinks">
       <a href="#conditions">Áreas de cuidado</a>
-      <a href="#steps">A consulta</a>
+      <a href="#tratamentos">Como tratar</a>
       <a href="#about">Sobre</a>
       <a href="#faq">Dúvidas</a>
-      <a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Carlucci." class="nav-cta" target="_blank" rel="noopener">Falar com a equipe</a>
+      <a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." class="nav-cta" target="_blank" rel="noopener">Agendar avaliação</a>
     </nav>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
@@ -474,11 +518,14 @@ footer{background:#071523;color:#fff;padding:80px 0 40px}
     <div class="hero-grid">
       <div class="hero-copy reveal">
         <span class="kicker"><span class="dot"></span>Ortopedia · Cirurgia da Mão · Intervenção em Dor</span>
-        <h1>Cuidar da dor começa por <em>compreender como ela afeta a sua vida.</em></h1>
+        <h1>Dor que não melhora? <em>Existem diferentes caminhos para tratar.</em></h1>
         <div class="rule"></div>
-        <p class="lead">Cada pessoa sente a dor de um jeito. Por isso, a consulta é um espaço de <b>escuta, avaliação cuidadosa e decisões compartilhadas</b>, considerando diferentes possibilidades de cuidado e cirurgia apenas quando indicada.</p>
+        <p class="lead">Avaliação ortopédica e tratamentos minimamente invasivos para dores musculoesqueléticas, com indicação individualizada.</p>
+        <div class="hero-focus" aria-label="Principais possibilidades de cuidado">
+          <span>Intervenção em dor</span><span>Infiltrações guiadas</span><span>Ondas de choque</span><span>Medicina regenerativa</span><span>Cirurgia quando necessária</span>
+        </div>
         <div class="hero-actions">
-          <a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Carlucci." class="cta" target="_blank" rel="noopener">Conversar com a equipe
+          <a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." class="cta" target="_blank" rel="noopener">Agendar uma avaliação
             <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
           </a>
         </div>
@@ -491,15 +538,19 @@ footer{background:#071523;color:#fff;padding:80px 0 40px}
         </div>
         <div class="badge b1">
           <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l2.5 5 5.5.8-4 3.9 1 5.5L12 20l-5 2.6 1-5.5-4-3.9 5.5-.8z"/></svg></span>
-          <div><b>Especialista</b> em cirurgia da mão</div>
+          <div><b>Ortopedista</b> e traumatologista</div>
         </div>
         <div class="badge b2">
           <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-          <div><b>Pós-graduação</b> em intervenção em dor</div>
+          <div><b>Especialista</b> em cirurgia da mão</div>
         </div>
         <div class="badge b3">
           <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></span>
-          <div>Cirurgia <b>apenas quando necessária</b></div>
+          <div><b>Pós-graduação</b> em intervenção em dor e medicina regenerativa</div>
+        </div>
+        <div class="badge b4">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5v14"/><circle cx="12" cy="12" r="9"/></svg></span>
+          <div>Procedimentos <b>minimamente invasivos</b> quando indicados</div>
         </div>
       </div>
     </div>
@@ -513,54 +564,51 @@ footer{background:#071523;color:#fff;padding:80px 0 40px}
 <section class="conditions pad interactive-dark" id="conditions">
   <div class="wrap center">
     <span class="eyebrow on-dark reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Áreas de cuidado</span>
-    <h2 class="sec-title on-dark reveal">A dor pode ter diferentes origens e aparecer em diferentes regiões</h2>
-    <p class="sec-sub reveal" style="color:#9DB6D6">A avaliação considera sua história, seus movimentos e o impacto dos sintomas na rotina para compreender quais caminhos podem fazer sentido.</p>
-    <div class="cond-grid">
-      <div class="cond-card reveal">
-        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M4 12h4l2-5 4 10 2-5h4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Tratamento Intervencionista da Dor</h3>
-        <p>Procedimentos pouco invasivos podem ser considerados para investigar ou cuidar de pontos específicos relacionados à dor.</p>
+    <h2 class="sec-title on-dark reveal">Tratamentos e regiões avaliadas, apresentados de forma clara</h2>
+    <p class="sec-sub reveal" style="color:#9DB6D6">A escolha do cuidado depende da origem da dor, da estrutura envolvida e do impacto dos sintomas na rotina.</p>
+    <div class="care-split">
+      <div class="care-block reveal">
+        <div class="care-block-head"><span>01</span><div><h3>Tratamentos e procedimentos</h3><p>Possibilidades consideradas somente quando há indicação para o caso.</p></div></div>
+        <div class="care-tags">
+          <div class="care-tag">Intervenção em dor</div>
+          <div class="care-tag">Infiltrações guiadas por ultrassom</div>
+          <div class="care-tag">Ondas de choque</div>
+          <div class="care-tag">Laserterapia</div>
+          <div class="care-tag">Medicina regenerativa</div>
+          <div class="care-tag">PRP</div>
+          <div class="care-tag">Ácido hialurônico</div>
+        </div>
       </div>
-      <div class="cond-card reveal">
-        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M4 12h4l2-5 4 10 2-5h4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Infiltração para Dor</h3>
-        <p>Em situações selecionadas, a infiltração pode fazer parte do cuidado para reduzir inflamação e aliviar sintomas.</p>
+      <div class="care-block reveal">
+        <div class="care-block-head"><span>02</span><div><h3>Dores e condições que avaliamos</h3><p>O diagnóstico considera a origem do sintoma, e não somente o ponto onde dói.</p></div></div>
+        <div class="care-tags care-regions">
+          <div class="care-tag">Ombro</div><div class="care-tag">Cotovelo</div><div class="care-tag">Mão e punho</div><div class="care-tag">Quadril</div><div class="care-tag">Joelho</div><div class="care-tag">Coluna</div><div class="care-tag">Tornozelo e pé</div>
+        </div>
       </div>
-      <div class="cond-card reveal">
-        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M7 4v9a5 5 0 0010 0V4" stroke-linecap="round"/><path d="M4 20h16" stroke-linecap="round"/></svg></div>
-        <h3>Epicondilite</h3>
-        <p>O desconforto no cotovelo pode aparecer com esforços repetitivos, atividades esportivas ou sobrecarga dos tendões.</p>
-      </div>
-      <div class="cond-card reveal">
-        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M8 20c-2-4-2-8 0-12 1-2 4-2 5 0 1-3 4-3 5-1 2 4 1 9-2 13" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Fascite Plantar</h3>
-        <p>A sensibilidade na planta do pé ou no calcanhar costuma ser percebida nos primeiros passos ou depois do repouso.</p>
-      </div>
-      <div class="cond-card reveal">
-        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M8 20V8m0 0a4 4 0 118 0m-8 0h8m0 12V8" stroke-linecap="round"/><path d="M6 14h12" stroke-linecap="round"/></svg></div>
-        <h3>Síndrome do Túnel do Carpo</h3>
-        <p>Formigamento, dormência, perda de força e incômodo noturno podem interferir no sono e nas atividades diárias.</p>
-      </div>
-      <div class="cond-card reveal">
-        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M5 12c3-4 11-4 14 0-3 4-11 4-14 0z" stroke-linejoin="round"/><path d="M9 12h6" stroke-linecap="round"/></svg></div>
-        <h3>Dedo em Gatilho</h3>
-        <p>Travamentos, estalos ou sensibilidade ao dobrar o dedo podem tornar movimentos simples mais desconfortáveis.</p>
-      </div>
-      <div class="cond-card reveal">
-        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M4 15l4-9 4 5 3-3 5 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Tendinite de De Quervain</h3>
-        <p>O incômodo próximo ao polegar e ao punho pode aumentar ao segurar objetos, movimentar a mão ou carregar peso.</p>
-      </div>
-      <div class="cond-card reveal">
-        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2" stroke-linecap="round"/></svg></div>
-        <h3>Rizartrose</h3>
-        <p>A alteração na base do polegar pode causar sensibilidade e dificultar tarefas como pinçar, abrir potes ou segurar objetos.</p>
-      </div>
-      <div class="cond-card reveal">
-        <div class="ci"><svg viewBox="0 0 24 24" stroke-width="1.7"><path d="M12 3v7m0 0l-3 8h6l-3-8z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="1.6"/></svg></div>
-        <h3>Cisto Sinovial</h3>
-        <p>Esse nódulo pode surgir no punho ou na mão e, em alguns casos, causar desconforto ou limitação dos movimentos.</p>
-      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PERSISTENT PAIN ============ -->
+<section class="persistent-pain" id="dor-persistente">
+  <div class="wrap persistent-grid">
+    <div class="persistent-copy reveal">
+      <span class="eyebrow">Quando a dor persiste</span>
+      <h2>A dor continua mesmo <em>depois do tratamento?</em></h2>
+      <ul class="persistent-questions">
+        <li>Você já fez fisioterapia?</li>
+        <li>Já tomou medicamentos?</li>
+        <li>A dor melhorou e voltou?</li>
+        <li>Está evitando atividades por causa dela?</li>
+        <li>Já ouviu que vai ter que conviver com isso?</li>
+      </ul>
+    </div>
+    <div class="persistent-card reveal">
+      <h3>Pode ser o momento de rever o diagnóstico.</h3>
+      <p>Quando a dor persiste, buscamos compreender se existem outras possibilidades de tratamento e quais delas podem fazer sentido para o seu caso.</p>
+      <a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." class="cta sm" target="_blank" rel="noopener">Agendar uma avaliação
+        <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+      </a>
     </div>
   </div>
 </section>
@@ -617,7 +665,7 @@ footer{background:#071523;color:#fff;padding:80px 0 40px}
           <div class="pain-possibilities" id="pain-possibilities"><span>Origem do desconforto</span><span>Dor facial</span><span>Encaminhamento quando necessário</span></div>
           <div class="pain-note"><i>i</i><span>O mapa é informativo. O diagnóstico e a indicação de tratamento dependem de avaliação médica individual.</span></div>
         </div>
-        <a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Carlucci." class="cta sm" target="_blank" rel="noopener">Quero conversar sobre isso
+        <a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." class="cta sm" target="_blank" rel="noopener">Agendar uma avaliação
           <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
         </a>
       </div>
@@ -625,19 +673,55 @@ footer{background:#071523;color:#fff;padding:80px 0 40px}
   </div>
 </section>
 
-<!-- ============ VIDEO ============ -->
-<section class="care-video" id="video">
+<!-- ============ TREATMENT PATHS ============ -->
+<section class="treatments" id="tratamentos">
   <div class="wrap">
-    <div class="care-video-card reveal">
-      <div class="care-video-copy">
-        <small>Uma conversa sobre cuidado</small>
-        <h2>Informação também faz parte de uma escolha mais tranquila.</h2>
-        <p>Neste vídeo, conversamos de forma simples sobre os sinais do corpo e as possibilidades de cuidado, para que você se sinta mais seguro em cada etapa.</p>
-        <a class="care-video-link" href="https://www.instagram.com/dr.carluccimartins/reel/DaTqzdHhYou/" target="_blank" rel="noopener">Ver publicação original <span aria-hidden="true">↗</span></a>
+    <div class="treatment-intro">
+      <div class="reveal">
+        <span class="eyebrow">Como podemos tratar?</span>
+        <h2>Tratamentos para dor: <em>qual é o melhor para o seu caso?</em></h2>
       </div>
-      <div class="care-video-shell">
-        <iframe src="https://www.instagram.com/reel/DaTqzdHhYou/embed/" title="Vídeo do Dr. Carlucci Martins sobre cuidado e tratamento" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
+      <p class="reveal">O tratamento da dor não segue uma fórmula pronta. Ele depende da causa do problema, da estrutura comprometida, da intensidade e duração dos sintomas e do impacto da dor na sua rotina. Após uma avaliação individualizada, diferentes estratégias podem ser utilizadas de forma isolada ou combinada.</p>
+    </div>
+
+    <div class="treatment-grid">
+      <article class="treatment-card reveal" data-number="01">
+        <h3>Reabilitação e tratamento conservador</h3>
+        <p>Em muitos casos, o primeiro caminho é controlar a dor e recuperar movimento, força e função sem procedimentos invasivos. O cuidado pode envolver orientações, exercícios específicos, fisioterapia e adequação das atividades.</p>
+      </article>
+      <article class="treatment-card reveal" data-number="02">
+        <h3>Procedimentos minimamente invasivos</h3>
+        <p>Quando o tratamento conservador não é suficiente ou existe uma indicação específica, alguns procedimentos podem ajudar no controle da dor e na recuperação da função, muitas vezes sem necessidade de cirurgia.</p>
+      </article>
+      <article class="treatment-card reveal" data-number="03">
+        <h3>Infiltrações guiadas por ultrassom</h3>
+        <p>O ultrassom permite visualizar em tempo real tendões, articulações, músculos, bursas e nervos, auxiliando no direcionamento do procedimento para o local planejado.</p>
+      </article>
+      <article class="treatment-card reveal" data-number="04">
+        <h3>Terapia por ondas de choque</h3>
+        <p>Tratamento não cirúrgico utilizado em algumas condições musculoesqueléticas, especialmente em determinadas alterações dos tendões e outras dores crônicas. A indicação depende do diagnóstico e do tempo de evolução.</p>
+      </article>
+      <article class="treatment-card reveal" data-number="05">
+        <h3>Medicina regenerativa</h3>
+        <p>Em casos selecionados, estratégias biológicas podem ser consideradas para atuar no ambiente da estrutura lesionada. A decisão considera o diagnóstico, as evidências científicas disponíveis e as características individuais.</p>
+      </article>
+      <article class="treatment-card reveal" data-number="06">
+        <h3>Cirurgia</h3>
+        <p>A cirurgia é uma ferramenta importante quando existe indicação precisa e outras estratégias não são suficientes ou adequadas. Ela é considerada quando realmente representa a melhor alternativa para o caso.</p>
+      </article>
+    </div>
+
+    <div class="procedure-gallery reveal" aria-label="Registros da atuação em procedimentos cirúrgicos">
+      <figure class="procedure-photo"><img src="assets/images/dr-carlucci-cirurgia-1.jpg" alt="Dr. Carlucci Martins durante um procedimento cirúrgico" width="1365" height="2048" loading="lazy"><span>Precisão e cuidado durante cada procedimento</span></figure>
+      <figure class="procedure-photo"><img src="assets/images/dr-carlucci-cirurgia-2.jpg" alt="Dr. Carlucci Martins atuando em ambiente cirúrgico" width="1365" height="2048" loading="lazy"><span>Atuação em ambiente cirúrgico</span></figure>
+      <figure class="procedure-photo"><img src="assets/images/dr-carlucci-cirurgia-3.jpg" alt="Dr. Carlucci Martins realizando uma cirurgia" width="1350" height="1800" loading="lazy"><span>Procedimentos indicados de forma individualizada</span></figure>
+    </div>
+
+    <div class="treatment-highlight reveal">
+      <div><h3>O melhor tratamento não é necessariamente o mais moderno. É aquele que tem indicação para <em>você.</em></h3><p>Descubra qual abordagem pode ser indicada para o seu caso.</p></div>
+      <a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." class="cta sm" target="_blank" rel="noopener">Agendar uma avaliação
+        <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+      </a>
     </div>
   </div>
 </section>
@@ -647,7 +731,7 @@ footer{background:#071523;color:#fff;padding:80px 0 40px}
   <div class="wrap reveal">
     <h2>A dor não acontece separada da vida.<br><em>Ela afeta sono, movimento e rotina.</em></h2>
     <p>Por isso, o cuidado começa pela escuta e por uma avaliação atenta. A partir daí, as possibilidades são conversadas com clareza e escolhidas de forma individual.</p>
-    <a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Carlucci." class="cta" style="margin:0 auto" target="_blank" rel="noopener">Conversar com a equipe
+    <a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." class="cta" style="margin:0 auto" target="_blank" rel="noopener">Agendar uma avaliação
       <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
     </a>
   </div>
@@ -737,7 +821,7 @@ footer{background:#071523;color:#fff;padding:80px 0 40px}
         <p>Durante a consulta, buscamos compreender não apenas onde dói, mas também quando começou, o que piora ou alivia e como isso tem afetado o sono, os movimentos e a rotina.</p>
         <p class="lead-line">O cuidado começa pela escuta e continua com decisões compartilhadas.</p>
         <p>Quando há mais de um caminho possível, conversamos sobre cada opção com clareza. Tratamentos conservadores, procedimentos intervencionistas e cirurgia são considerados de acordo com a necessidade de cada caso.</p>
-        <a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Carlucci." class="cta" target="_blank" rel="noopener">Falar com a equipe
+        <a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." class="cta" target="_blank" rel="noopener">Agendar uma avaliação
           <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
         </a>
       </div>
@@ -774,36 +858,28 @@ footer{background:#071523;color:#fff;padding:80px 0 40px}
     <h2 class="sec-title on-dark reveal">Algumas dúvidas que podem surgir antes da consulta</h2>
     <div class="faq-wrap" id="faq-acc">
       <div class="faq-item open">
-        <div class="faq-q">Toda dor precisa de cirurgia?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
-        <div class="faq-a"><p>Não. Há diferentes formas de cuidado, como acompanhamento clínico, medicação, reabilitação e procedimentos intervencionistas. A cirurgia é considerada somente quando a avaliação mostra que ela pode ser necessária.</p></div>
+        <div class="faq-q">Preciso ter exames?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
+        <div class="faq-a"><p>Não. Você pode agendar sua avaliação mesmo sem exames prévios. Durante a consulta, fazemos a avaliação clínica e, caso seja necessário, solicitamos os exames mais adequados de acordo com a suspeita diagnóstica. Se você já possui exames relacionados à sua dor, leve-os para a consulta.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Quando vale a pena procurar avaliação para uma dor?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
-        <div class="faq-a"><p>Quando a dor persiste, se repete, limita movimentos, altera o sono ou começa a interferir na rotina, uma avaliação pode ajudar a compreender melhor o quadro. Sintomas intensos ou que surgem após um trauma também merecem atenção.</p></div>
+        <div class="faq-q">Todo paciente precisa fazer procedimento?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
+        <div class="faq-a"><p>Não. Procedimentos são indicados somente quando realmente podem trazer benefício para aquele caso. Dependendo do diagnóstico, o tratamento pode envolver orientações, medicamentos, exercícios, fisioterapia e acompanhamento. Infiltrações, ondas de choque, procedimentos minimamente invasivos ou cirurgia são considerados quando existe indicação específica.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">A dor precisa estar muito forte para ser avaliada?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
-        <div class="faq-a"><p>Não. A intensidade é apenas uma parte da história. A duração, a frequência, os sintomas associados e o impacto na sua vida também ajudam a entender quando uma investigação é importante.</p></div>
+        <div class="faq-q">Infiltração dói?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
+        <div class="faq-a"><p>Pode haver desconforto durante a aplicação, que varia conforme a região tratada e a sensibilidade de cada pessoa. Após o procedimento, é comum ouvirmos que a experiência foi mais tranquila do que o paciente imaginava. Quando indicado, o ultrassom permite visualizar a estrutura abordada e acompanhar o posicionamento da agulha em tempo real.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">O que é tratamento intervencionista da dor?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
-        <div class="faq-a"><p>É uma área dedicada a avaliar e cuidar da dor por meio de procedimentos pouco invasivos, quando eles são indicados. A decisão depende da origem provável dos sintomas, do exame clínico e das necessidades de cada pessoa.</p></div>
+        <div class="faq-q">Quando a cirurgia é necessária?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
+        <div class="faq-a"><p>A cirurgia é considerada quando existe uma indicação bem definida, seja pela característica da lesão, pela gravidade do quadro ou quando outras opções não apresentam o resultado esperado. Avaliamos as possibilidades e indicamos cirurgia quando ela realmente representa a melhor alternativa para o paciente.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">O que fazemos na intervenção em dor?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
-        <div class="faq-a"><p>Buscamos compreender as possíveis fontes e os mecanismos da dor, além de observar como os sintomas afetam o movimento, o sono e a rotina. Quando indicado, podemos propor infiltrações, bloqueios diagnósticos ou terapêuticos e outros procedimentos pouco invasivos. Também podemos incluir medicação, reabilitação e acompanhamento com outros profissionais no cuidado.</p></div>
+        <div class="faq-q">Quais regiões são tratadas?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
+        <div class="faq-a"><p>A avaliação e o tratamento da dor musculoesquelética podem envolver ombro, cotovelo, punho, mão, quadril, coluna, joelho, tornozelo e pé, entre outras regiões. A abordagem depende principalmente da origem da dor e do diagnóstico, e não apenas do local onde o sintoma é percebido.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Os procedimentos de intervenção em dor têm comprovação científica?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
-        <div class="faq-a"><p>Existem procedimentos respaldados por estudos e diretrizes para situações específicas, mas a evidência não é igual para todas as técnicas nem para todos os tipos de dor. Por isso, cada indicação deve considerar o diagnóstico, os benefícios esperados, os riscos, as alternativas disponíveis e as preferências do paciente.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Como funciona o pagamento? Atende convênios?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
-        <div class="faq-a"><p>Há atendimento pelos convênios Unimed e Bradesco, além da modalidade particular. Podemos orientar pelo WhatsApp sobre cobertura, autorizações e outras informações antes da consulta.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Infiltração é indicada para qualquer tipo de dor?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
-        <div class="faq-a"><p>Não. Ela é considerada apenas quando a avaliação indica que pode fazer parte do cuidado. O local, a medicação e a técnica são definidos individualmente e explicados antes do procedimento.</p></div>
+        <div class="faq-q">Como agendar?<span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></div>
+        <div class="faq-a"><p>O agendamento pode ser realizado diretamente pelo WhatsApp da clínica. Nossa equipe fará o primeiro atendimento, entenderá brevemente o motivo da consulta e orientará sobre horários disponíveis, localização e demais informações necessárias.</p></div>
       </div>
     </div>
   </div>
@@ -814,7 +890,7 @@ footer{background:#071523;color:#fff;padding:80px 0 40px}
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-list reveal">
-        <div class="foot-item"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 5c0 8 7 15 15 15 1 0 2-1 2-2v-3l-4-2-2 2c-3-1-5-3-6-6l2-2-2-4H6c-1 0-2 1-2 2z"/></svg></span><div><b>WhatsApp</b><span><a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Carlucci." target="_blank" rel="noopener">(37) 9 9958-0303</a></span></div></div>
+        <div class="foot-item"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 5c0 8 7 15 15 15 1 0 2-1 2-2v-3l-4-2-2 2c-3-1-5-3-6-6l2-2-2-4H6c-1 0-2 1-2 2z"/></svg></span><div><b>WhatsApp</b><span><a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">(37) 9 9958-0303</a></span></div></div>
         <div class="foot-item"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg></span><div><b>Convênios e particular</b><span>Unimed · Bradesco · Particular</span></div></div>
         <div class="foot-item"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg></span><div><b>Horário de atendimento</b><span>Segunda a sexta, das 8h às 18h</span></div></div>
         <div class="foot-item"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M4 20c0-3 2-5 5-5s5 2 5 5"/><circle cx="17" cy="9" r="2"/></svg></span><div><b>Modalidades de atendimento</b><span>Presencial e telemedicina</span></div></div>
@@ -849,6 +925,7 @@ footer{background:#071523;color:#fff;padding:80px 0 40px}
           <a href="#top">Início</a>
           <a href="#conditions">Áreas de cuidado</a>
           <a href="#mapa-da-dor">Mapa da dor</a>
+          <a href="#tratamentos">Como podemos tratar</a>
           <a href="#steps">A consulta</a>
         </nav>
       </div>
@@ -865,7 +942,7 @@ footer{background:#071523;color:#fff;padding:80px 0 40px}
       <div class="footer-column">
         <h3>Contato</h3>
         <div class="footer-contact-list">
-          <span><b>WhatsApp</b><a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Carlucci." target="_blank" rel="noopener">(37) 9 9958-0303</a></span>
+          <span><b>WhatsApp</b><a href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">(37) 9 9958-0303</a></span>
           <span><b>Instagram</b><a href="https://www.instagram.com/dr.carluccimartins/" target="_blank" rel="noopener">@dr.carluccimartins</a></span>
           <span><b>Endereço</b>Avenida Antônio Olímpio de Morais, 857<br>3º andar · Centro · Divinópolis/MG</span>
         </div>
@@ -879,7 +956,7 @@ footer{background:#071523;color:#fff;padding:80px 0 40px}
   </div>
 </footer>
 
-<a class="wa" href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Carlucci." target="_blank" rel="noopener" aria-label="Falar com a equipe pelo WhatsApp">
+<a class="wa" href="https://wa.me/5537999580303?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" aria-label="Agendar uma avaliação pelo WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm5.6 14.2c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.5-2.7-1.2-4.4-3.9-4.5-4-.1-.2-1-1.3-1-2.5s.6-1.8.9-2c.2-.3.5-.3.6-.3h.5c.2 0 .4 0 .6.5l.7 1.7c.1.1.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.5.1.3.6 1 1.3 1.6.9.8 1.6 1 1.9 1.2.2.1.4.1.5-.1l.6-.7c.2-.2.3-.2.5-.1l1.6.8c.2.1.4.2.5.3.1.2.1.6-.1 1.2z"/></svg>
 </a>
 
@@ -902,7 +979,7 @@ burger.addEventListener('click',()=>{burger.classList.toggle('x');links.classLis
 links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('x');links.classList.remove('show')}));
 // ticker (duplicate for seamless loop)
 const t=document.getElementById('ticker');
-const seg='<span>INTERVENÇÃO EM DOR <i class="muted">CIRURGIA DA MÃO · Dr. Carlucci Martins</i></span>';
+const seg='<span>INTERVENÇÃO EM DOR <i class="muted">INFILTRAÇÕES GUIADAS · ONDAS DE CHOQUE · MEDICINA REGENERATIVA · CIRURGIA DA MÃO</i></span>';
 t.innerHTML=(seg.replace('<i','<span').replace('</i>','</span>')).repeat(8);
 // accordion generic
 function bindAcc(container,itemSel){
@@ -927,7 +1004,7 @@ const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.ta
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
 // Staggered entrances for repeated content
-document.querySelectorAll('.cond-grid,.fw-list,.testi-scroll,.foot-list').forEach(group=>{
+document.querySelectorAll('.care-tags,.treatment-grid,.procedure-gallery,.fw-list,.testi-scroll,.foot-list').forEach(group=>{
   [...group.children].forEach((el,index)=>el.style.transitionDelay=`${Math.min(index*65,390)}ms`);
 });
 
@@ -955,7 +1032,7 @@ document.querySelectorAll('.interactive-dark').forEach(section=>{
 
 // Subtle depth on cards (desktop pointer devices only)
 if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
-  document.querySelectorAll('.cond-card,.tcard').forEach(card=>{
+  document.querySelectorAll('.care-tag,.treatment-card,.tcard').forEach(card=>{
     card.addEventListener('pointermove',event=>{
       const rect=card.getBoundingClientRect();
       const rx=((event.clientY-rect.top)/rect.height-.5)*-5;
